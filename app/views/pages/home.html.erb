@@ -5,6 +5,12 @@
     <%= image_tag("allpacas", id: "logo")%>
   </a>
   <!-- searchbar -->
+  <form class="navbar-form navbar-left" role="search">
+    <div class="form-group">
+      <input type="text" class="form-control">
+      <button type="submit" class="btn-yellow">Search</button>
+    </div>
+  </form>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -28,18 +34,21 @@
 
 <div class="banner">
   <div class="banner-content">
-    <h1>ALLPACAS.COM</h1>
-    <h2>Find the perfect alpaca for ...</h2>
+    <h1>allpacas.com</h1>
+    <p>Your number 1 resource</p>
+    <p>for alpaca rentals</p>
     <!--  avatars -->
-    <div class="row">
-      <%= image_tag("allpacas", class: "avatar-large")%>
-      <%= image_tag("allpacas", class: "avatar-large")%>
-      <%= image_tag("allpacas", class: "avatar-large")%>
-    </div>
-     <div class="row">
-      <%= image_tag("allpacas", class: "avatar-large")%>
-      <%= image_tag("allpacas", class: "avatar-large")%>
-      <%= image_tag("allpacas", class: "avatar-large")%>
+    <div class="container">
+      <div class="row">
+        <%= image_tag("allpacas", class: "avatar-large")%>
+        <%= image_tag("allpacas", class: "avatar-large")%>
+        <%= image_tag("allpacas", class: "avatar-large")%>
+      </div>
+       <div class="row">
+        <%= image_tag("allpacas", class: "avatar-large")%>
+        <%= image_tag("allpacas", class: "avatar-large")%>
+        <%= image_tag("allpacas", class: "avatar-large")%>
+      </div>
     </div>
   </div>
 </div>
