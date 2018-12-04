@@ -1,11 +1,12 @@
 .footer {
-  background: $creme;
+  background-color: $creme;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: $footer-height;
   padding: 0px 50px;
   color: #A68658;
+  padding-top: 20px;
 }
 .footer-links {
   display: flex;
