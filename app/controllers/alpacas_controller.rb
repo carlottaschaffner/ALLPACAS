@@ -2,7 +2,7 @@ class AlpacasController < ApplicationController
 
   def index
     @alpacas = Alpaca.all
-    authorize @alpacas
+    @alpacas = policy_scope(Alpaca).order(created_at: :desc)
   end
 
   def show
