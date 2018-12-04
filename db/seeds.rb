@@ -9,7 +9,7 @@ Alpaca.destroy_all
 User.destroy_all
 
 puts 'Creating users...'
-names = ["drf", "sdf", "rts"]
+names = ["Carlotta", "Daniel", "Ines"]
 names.each do |name|
   user = User.new(
     email: "#{rand(10..100)}@railstutorial.org",
