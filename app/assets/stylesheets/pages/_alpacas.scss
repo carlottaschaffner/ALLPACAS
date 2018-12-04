@@ -1,2 +1,43 @@
-// index_page
+// index_page scss
+
+.about-alpacas {
+  margin: 30px;
+}
+
+.alpaca {
+  width: auto;
+  height: 350px;
+  background: white;
+  border-radius: 4px;
+  box-shadow:  0 1px 7px rgba(0,0,0,.05);
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+}
+
+.alpaca-photo {
+  height: 71%;
+  width: auto;
+  position: absolute;
+  margin-top: 5px;
+}
+
+.alpaca-details {
+  color: $green;
+  position: absolute;
+  bottom: 45px;
+  left: 10px;
+}
+
+.row {
+  margin-bottom: 50px;
+  justify-content: space-around;
+}
+
+.alpaca-action {
+  position: absolute;
+  bottom: 8px;
+}
+
 
