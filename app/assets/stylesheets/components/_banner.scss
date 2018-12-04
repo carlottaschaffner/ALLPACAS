@@ -1,8 +1,6 @@
 .banner {
   color: #FFB202;
   text-align: center;
-  height: calc(100vh - #{$navbar-height} - #{$footer-height});
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
   justify-content: center;

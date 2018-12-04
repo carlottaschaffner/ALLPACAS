@@ -2,4 +2,5 @@
   padding: 0;
   margin: 0;
   padding-top: $navbar-height;
+  min-height: calc(100vh - #{$footer-height});
 }
