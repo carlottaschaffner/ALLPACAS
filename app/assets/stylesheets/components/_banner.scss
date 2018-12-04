@@ -1,9 +1,6 @@
 .banner {
-  background-color: #FFEDCB;
   color: #FFB202;
   text-align: center;
-  height: 100vh;
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
   justify-content: center;
@@ -12,10 +9,10 @@
   font-size: 85px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-  margin-top: 50px;
+  margin-top: 15px;
 }
 .banner p {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: lighter;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   font-style: 'Raleway';
@@ -29,7 +26,17 @@
   font-weight: 400;
 }
 
-.container {
-  margin-top: 50px;
+.banner-about p {
+  font-size: 25px;
+  color: white;
 }
 
+.banner-about h1 {
+  font-size: 50px;
+}
+
+.banner-about {
+  padding: 30px;
+  color: white;
+  margin-bottom: 70px;
+}
