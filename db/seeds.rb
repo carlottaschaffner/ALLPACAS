@@ -5,3 +5,33 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Alpaca.destroy_all
+User.destroy_all
+
+puts 'Creating users...'
+names = ["Carlotta", "Daniel", "Ines"]
+names.each do |name|
+  user = User.new(
+    email: "#{rand(10..100)}@railstutorial.org",
+    password: "foobar",
+  )
+  user.save!
+  puts "#{name}"
+end
+
+puts "Created #{User.count} users..."
+
+
+puts 'Creating alpacas...'
+names = ["Bill", "Bob", "Fred"]
+names.each do |name|
+  alpaca = Alpaca.new(
+    name: name,
+    price: rand(10..100),
+    user: User.all.sample
+  )
+  alpaca.save!
+  puts "#{name}"
+end
+
+puts "Created #{Alpaca.count} alpacas..."
