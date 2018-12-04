@@ -1,0 +1,78 @@
+.grid {
+  display: grid;
+  grid-template-columns: auto 30% 35%;
+  grid-template-rows: 300px 150px 150px 500px;
+  border: solid;
+  border-color: black 1px;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+.alpaca-picture {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 1;
+  background-color: blue;
+  position: relative;
+}
+
+.alpaca-key-info {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+  background-color: red;
+}
+
+.alpaca-rating {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+  background-color: green;
+}
+
+.alpaca-description {
+  grid-column: 1 / span 2;
+  grid-row: 3 / span 1;
+}
+
+.alpaca-reviews {
+  grid-column: 1 / span 2;
+  grid-row: 4 / span 1;
+  background-color: yellow;
+}
+
+.alpaca-map {
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 1;
+  background-color: purple;
+}
+
+.alpaca-calendar {
+  grid-column: 3 / span 1;
+  grid-row: 2 / span 2;
+  background-color: orange;
+}
+
+.rating-block {
+  width: 50px;
+  height:35px;
+  background-color: orange;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  margin: 0px;
+}
+
+.rating-block p {
+  line-height: 34px;
+}
+
+#reviews-number {
+  font-size: 12px;
+  margin-left: 15px;
+}
+
+.inline h5 {
+  margin-left: 15px;
+}
+
+.inline {
+  display: flex;
+}
