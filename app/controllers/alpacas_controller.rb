@@ -1,7 +1,7 @@
 class AlpacasController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
 
   def index
-    # @alpacas = Alpaca.all
     @alpacas = policy_scope(Alpaca).order(created_at: :desc)
   end
 
