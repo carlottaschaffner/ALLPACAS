@@ -80,10 +80,25 @@
 
 .inline h5 {
   margin-left: 15px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .inline {
   display: flex;
+}
+
+.map-image {
+  height: 100%;
+  width: 100%;
+}
+
+.alpaca-key-info h3 {
+  margin: 0;
+}
+
+.alpaca-key-info p {
+  margin: 0;
 }
 
 // #crawl_start_date {
