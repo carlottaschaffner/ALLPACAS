@@ -4,15 +4,38 @@
     <p>Your number 1 resource for alpaca rentals</p>
     <!--  avatars -->
     <div class="container">
-      <div class="row">
-        <% 4.times do %>
-          <%= link_to image_tag("allpacas", class: "avatar-large"), alpacas_path %>
-        <% end %>
+      <div class="row avatarsss">
+        <div class="avatar-box">
+          <div class="text">
+            <span> Weddings</span></div>
+          <%= link_to image_tag("alpaca_icon_06", class: "avatar-large"), alpacas_path %>
+        </div>
+        <div class="avatar-box">
+          <div class="text">Photoshoots</div>
+          <%= link_to image_tag("alpaca_icon_01", class: "avatar-large"), alpacas_path %>
+        </div>
+        <div class="avatar-box">
+          <div class="text">Go for walks</div>
+          <%= link_to image_tag("alpaca_icon_02", class: "avatar-large"), alpacas_path %>
+        </div>
+        <div class="avatar-box">
+          <div class="text">Cuddle-Buddies</div>
+          <%= link_to image_tag("alpaca_icon_03", class: "avatar-large"), alpacas_path %>
+        </div>
       </div>
-       <div class="row">
-        <% 3.times do %>
-          <%= link_to image_tag("allpacas", class: "avatar-large"), alpacas_path %>
-        <% end %>
+      <div class="row avatarsss">
+        <div class="avatar-box">
+          <div class="text">Partyanimals</div>
+          <%= link_to image_tag("alpaca_icon_04", class: "avatar-large"), alpacas_path %>
+        </div>
+        <div class="avatar-box">
+          <div class="text">Talents</div>
+          <%= link_to image_tag("alpaca_icon_05", class: "avatar-large"), alpacas_path %>
+        </div>
+        <div class="avatar-box">
+          <div class="text">Others</div>
+          <%= link_to image_tag("alpaca_icon_06", class: "avatar-large"), alpacas_path %>
+        </div>
       </div>
     </div>
   </div>
