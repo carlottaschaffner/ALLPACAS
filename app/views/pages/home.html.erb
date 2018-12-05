@@ -1,20 +1,18 @@
 <div class="banner">
   <div class="banner-content">
     <h1>allpacas.com</h1>
-    <p>Your number 1 resource</p>
-    <p>for alpaca rentals</p>
+    <p>Your number 1 resource for alpaca rentals</p>
     <!--  avatars -->
     <div class="container">
       <div class="row">
-        <%= link_to image_tag("allpacas", class: "avatar-large"), alpacas_path %>
-        <%= link_to image_tag("allpacas", class: "avatar-large"), alpacas_path %>
-        <%= link_to image_tag("allpacas", class: "avatar-large"), alpacas_path %>
-        <%= link_to image_tag("allpacas", class: "avatar-large"), alpacas_path %>
+        <% 4.times do %>
+          <%= link_to image_tag("allpacas", class: "avatar-large"), alpacas_path %>
+        <% end %>
       </div>
        <div class="row">
-        <%= link_to image_tag("allpacas", class: "avatar-large"), alpacas_path %>
-        <%= link_to image_tag("allpacas", class: "avatar-large"), alpacas_path %>
-        <%= link_to image_tag("allpacas", class: "avatar-large"), alpacas_path %>
+        <% 3.times do %>
+          <%= link_to image_tag("allpacas", class: "avatar-large"), alpacas_path %>
+        <% end %>
       </div>
     </div>
   </div>
