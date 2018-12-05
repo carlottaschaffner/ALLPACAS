@@ -1,4 +1,4 @@
 .container.custom-container{
-  padding-top: calc(#{$navbar-height} + 20px);
+  padding-top: calc(#{$navbar-height} + 10px);
   min-height: calc(100vh - #{$footer-height});
 }
