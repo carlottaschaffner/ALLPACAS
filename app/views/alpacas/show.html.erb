@@ -1,18 +1,23 @@
 <div class="wrapper">
   <div class="container">
     <div class="grid">
-      <div class="alpaca-picture">
-        <div class="avatar-large alpaca-owner"></div>
+
+      <div class="alpaca-profile">
+      <%= image_tag("twocutealpacas", class: "alpaca-profile-picture")%>
+         <%= image_tag("sexyfarmer", class: "avatar-large alpaca-owner")%>
       </div>
+
       <div class="alpaca-key-info">
-        <h2>Fred the Alpaca</h2>
+        <h2>Romeu & Juliet the Alpaca Couple</h2>
         <p>Bairro Alto, Lisbon</p>
         <p><strong>£100,000</strong></p>
       </div>
+
       <div class="alpaca-description">
-        <p> I am an alpaca and I am fucking awesome. I'm furry, well cute, apart from when I spit at people but they don't even do anything cos they are a bunch of pusaaaaaayyyyyzzzzz.
+        <p> This couple isn't actually here to serve you, in fact they're in need of couple therapy so please help if you can...
         </p>
       </div>
+
       <div class="alpaca-rating">
         <div class="inline">
           <div class="rating-block">
@@ -21,14 +26,25 @@
             </div>
           </div>
           <div>
-            <h5>Shannon</h5>
+            <h5>Naked Farmer</h5>
             <p id=reviews-number>3000 reviews</p>
           </div>
         </div>
         <div><p>Value for money</p></div>
         <div><p>Location</p></div>
       </div>
-      <div class="alpaca-reviews"></div>
+
+      <div class="alpaca-reviews">
+        <div class="top-half-review">
+          <div class="reviewer-photo"></div>
+          <div class="review"></div>
+      <div class="bottom-half-review">
+
+      </div>
+        </div>
+      </div>
+
+
       <div class="alpaca-map"></div>
       <div class="alpaca-calendar">
         <%#= simple_form_for @alpaca.name do |f| %>
