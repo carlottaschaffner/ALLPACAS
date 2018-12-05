@@ -1,7 +1,7 @@
 .grid {
   display: grid;
   grid-template-columns: auto 30% 35%;
-  grid-template-rows: 300px 150px 150px 500px;
+  grid-template-rows: 350px 175px 175px 500px;
   border: solid;
   border-color: black 1px;
   grid-column-gap: 20px;
@@ -12,12 +12,19 @@
   grid-row: 1 / span 1;
   background-color: blue;
   position: relative;
+  background-image: url("https://images.unsplash.com/photo-1518259102261-b40117eabbc9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+  background-size: cover;
 }
  .alpaca-key-info {
   grid-column: 1 / span 1;
   grid-row: 2 / span 1;
   background-color: red;
 }
+
+ .alpaca-key-info h2 {
+  margin-top: 0px;
+ }
+
  .alpaca-rating {
   grid-column: 2 / span 1;
   grid-row: 2 / span 1;
