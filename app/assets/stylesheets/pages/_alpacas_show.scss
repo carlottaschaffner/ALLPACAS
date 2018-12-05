@@ -43,8 +43,8 @@
   background-color: orange;
 }
  .rating-block {
-  width: 50px;
-  height:35px;
+  width: 60px;
+  height:45px;
   background-color: orange;
   border-radius: 5px;
   color: white;
@@ -52,15 +52,58 @@
   margin: 0px;
 }
  .rating-block p {
-  line-height: 34px;
+  line-height: 40px;
 }
  #reviews-number {
-  font-size: 12px;
+  font-size: 16px;
   margin-left: 15px;
 }
- .inline h5 {
+ .inline h4 {
   margin-left: 15px;
 }
  .inline {
   display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.kill-margin-top {
+  margin-top: 0;
+}
+
+.kill-margin-bottom {
+  margin-bottom: 0;
+}
+
+.rating-bar {
+  width: 100%;
+  height: 7px;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.user-rating {
+  font-size: 14px;
+}
+
+.reviewer {
+  margin-left: 10px;
+}
+
+.alpaca-reviews {
+  margin-left: 10px;
+}
+
+.alpaca-reviews p {
+  font-size: 14px;
+}
+
+.user-rating p {
+  margin-top: 10px;
+}
+
+.review {
+  margin-bottom: 15px;
 }
