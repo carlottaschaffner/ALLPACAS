@@ -10,7 +10,9 @@
     <% @alpacas.each do |alpaca| %>
       <div class="col-xs-12 col-sm-4">
         <div class="alpaca">
-          <div class="alpaca-photo" style="background: linear-gradient(to bottom,rgba(20,20,20, 0.3),rgba(150,150,150,0.2) 30%)">I am an adorabole alpaca pictaaawwwwrrr</div>
+          <div class="alpaca-photo" >
+            <%= image_tag "https://source.unsplash.com/featured/300x200/?alpacas" %>
+          </div>
           <div class="alpaca-details">
             <div class="alpaca-name">
               <%= alpaca.name %>
