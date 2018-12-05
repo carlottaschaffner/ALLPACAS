@@ -7,20 +7,20 @@
 
 <div class="container">
   <div class="row">
-    <% 9.times do %>
+    <% @alpacas.each do |alpaca| %>
       <div class="col-xs-12 col-sm-4">
         <div class="alpaca">
           <div class="alpaca-photo" style="background: linear-gradient(to bottom,rgba(20,20,20, 0.3),rgba(150,150,150,0.2) 30%)">I am an adorabole alpaca pictaaawwwwrrr</div>
           <div class="alpaca-details">
             <div class="alpaca-name">
-              <%= "@alpaca.name" %>
+              <%= alpaca.name %>
             </div>
             <div class="alpaca-row">
               <span class="alpacas-reviews_count">34 reviews</span>
             </div>
           </div>
           <div class="alpaca-action text-center">
-            <%= link_to "Show", alpaca_path(1), class: "btn btn-yellow"  %>
+            <%= link_to "Show", alpaca_path(alpaca), class: "btn btn-yellow"  %>
           </div>
         </div>
       </div>
