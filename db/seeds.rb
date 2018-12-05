@@ -23,11 +23,13 @@ puts "Created #{User.count} users..."
 
 
 puts 'Creating alpacas...'
-names = ["Bill", "Bob", "Fred"]
+names = ["Bill", "Bob", "Fred", "Paco", "Jorge", "Andy", "Sherman"]
 names.each do |name|
   alpaca = Alpaca.new(
     name: name,
     price: rand(10..100),
+    color: ["brown", "camel", "cream", "off-white", "chocolate", "coffee"].sample,
+    age: rand(1..54),
     user: User.all.sample
   )
   alpaca.save!
