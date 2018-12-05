@@ -30,7 +30,12 @@
       </div>
       <div class="alpaca-reviews"></div>
       <div class="alpaca-map"></div>
-      <div class="alpaca-calendar"></div>
+      <div class="alpaca-calendar">
+        <%#= simple_form_for @alpaca.name do |f| %>
+          <%#= f.input :start_date, as: :date, html: { class: "crawl_start_date"} %>
+          <%#= f.input :start_date, as: :date, html: { class: "crawl_start_date"} %>
+        <%# end %>
+      </div>
     </div>
   </div>
 </div>
