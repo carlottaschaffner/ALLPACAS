@@ -4,15 +4,51 @@
     <p>Your number 1 resource for alpaca rentals</p>
     <!--  avatars -->
     <div class="container">
-      <div class="row">
-        <% 4.times do %>
-          <%= link_to image_tag("allpacas", class: "avatar-large"), alpacas_path %>
-        <% end %>
+      <div class="row avatarsss">
+        <div class="avatar-box">
+          <%=link_to alpacas_path, :action => 'go' do %>
+          <div class="text">Weddings</div>
+            <%= image_tag("alpaca_icon_06.png", class: "avatar-large") %>
+          <% end %>
+        </div>
+        <div class="avatar-box">
+          <%=link_to alpacas_path, :action => 'go' do %>
+          <div class="text">Photoshoots</div>
+            <%= image_tag("alpaca_icon_01.png", class: "avatar-large") %>
+          <% end %>
+        </div>
+        <div class="avatar-box">
+          <%=link_to alpacas_path, :action => 'go' do %>
+          <div class="text">Go for walks</div>
+            <%= image_tag("alpaca_icon_02.png", class: "avatar-large") %>
+          <% end %>
+        </div>
+        <div class="avatar-box">
+          <%=link_to alpacas_path, :action => 'go' do %>
+          <div class="text">Cuddle-Buddies</div>
+            <%= image_tag("alpaca_icon_03.png", class: "avatar-large") %>
+          <% end %>
+        </div>
       </div>
-       <div class="row">
-        <% 3.times do %>
-          <%= link_to image_tag("allpacas", class: "avatar-large"), alpacas_path %>
-        <% end %>
+      <div class="row avatarsss">
+        <div class="avatar-box">
+          <%=link_to alpacas_path, :action => 'go' do %>
+          <div class="text">Partyanimals</div>
+            <%= image_tag("alpaca_icon_04.png", class: "avatar-large") %>
+          <% end %>
+        </div>
+        <div class="avatar-box">
+          <%=link_to alpacas_path, :action => 'go' do %>
+          <div class="text">Talents</div>
+            <%= image_tag("alpaca_icon_05.png", class: "avatar-large") %>
+          <% end %>
+        </div>
+        <div class="avatar-box">
+          <%=link_to alpacas_path, :action => 'go' do %>
+          <div class="text">Others</div>
+            <%= image_tag("alpaca_icon_06.png", class: "avatar-large") %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
