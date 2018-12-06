@@ -7,14 +7,20 @@
   grid-column-gap: 20px;
   grid-row-gap: 20px;
 }
- .alpaca-picture {
+ .picture-frame {
   grid-column: 1 / span 2;
   grid-row: 1 / span 1;
   background-color: blue;
   position: relative;
-  background-image: url("https://images.unsplash.com/photo-1518259102261-b40117eabbc9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
-  background-size: cover;
+  overflow: hidden;
 }
+
+#alpaca-picture {
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+
  .alpaca-key-info {
   grid-column: 1 / span 1;
   grid-row: 2 / span 1;
@@ -96,10 +102,6 @@
 }
 
 .reviewer {
-  margin-left: 10px;
-}
-
-.alpaca-reviews {
   margin-left: 10px;
 }
 
