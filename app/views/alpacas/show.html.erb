@@ -59,7 +59,10 @@
           <div class="inline">
             <div class="avatar-small"></div>
             <div class="reviewer">
-              <div><p><strong><%= review.user.email %></strong></p></div>
+              <div><p><strong>
+                <%= review.user.first_name %>
+                <%= review.user.last_name %>
+                </strong></p></div>
               <div><p>X Days ago</p></div>
             </div>
           </div>
