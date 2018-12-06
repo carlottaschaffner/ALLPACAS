@@ -1,0 +1,57 @@
+<%= cl_image_tag("THE_IMAGE_ID_FROM_LIBRARY",
+      width: 400, height: 300, crop: :fill) %>
+
+      <!-- for face detection -->
+<%= cl_image_tag("IMAGE_WITH_FACE_ID",
+      width: 150, height: 150, crop: :thumb, gravity: :face) %>
+
+<!-- Crop modes: scale, fit, fill, limit, pad, crop.
+
+You even have thumb with Face detection -->
+
+<!-- app/views/articles/show.html.erb -->
+<%= cl_image_tag @article.photo, height: 300, width: 400, crop: :fill %>
+
+<!-- production:
+heroku config:set CLOUDINARY_URL=cloudinary://166....
+Check with:
+heroku config -->
+
+
+<div class="card"
+  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path @article.photo, height: 300, width: 400, crop: :fill %>')">
+  <div class="card-category">Popular</div>
+  <div class="card-description">
+    <h2>Some stuff</h2>
+    <p>Very cool stuff, useful and smart</p>
+  </div>
+  <a class="card-link" href="#" ></a>
+</div>
+
+<div class="alpaca">
+  <div class="alpaca-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path @alpaca.photo, height: 200, width: 300, crop: :fill %>')">
+      <%= image_tag("sexyfarmer.jpg", class: "avatar-medium") %>
+  </div>
+  <div class="alpaca-details">
+    <div class="alpaca-name">
+      <h3><%= alpaca.name %></h3>
+    </div>
+    <div class="alpaca-color">
+      <%= alpaca.color %>
+    </div>
+    <div class="alpaca-age">
+      <%= alpaca.age %>
+    </div>
+    <div class="alpaca-row">
+      <span class="alpacas-reviews_count">34 reviews</span>
+      <span class="alpacas-price">
+        <strong><%= alpaca.price %>€</strong>
+      </span>
+    </div>
+  </div>
+  <div class="alpaca-action text-center">
+    <%= link_to "Show", alpaca_path(alpaca), class: "btn btn-yellow"  %>
+  </div>
+</div>
