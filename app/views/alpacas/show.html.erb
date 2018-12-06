@@ -7,7 +7,7 @@
       </div>
       <div class="alpaca-key-info">
         <h2><%= @alpaca.name %></h2>
-        <p>Bairro Alto, Lisbon</p>
+        <p><%= @alpaca.address %></p>
         <p><strong><%= @alpaca.price %>€</strong></p>
       </div>
       <div class="alpaca-description">
@@ -18,18 +18,24 @@
           <div class="rating-block">
             <div>
               <p><strong>
-              <%= @alpaca.reviews.average(:rating).round(1).to_s %>
+                <% unless @alpaca.reviews.average(:rating).nil? %>
+                  <%= @alpaca.reviews.average(:rating).round(1).to_s %>
+                <% else %>
+                  N/A
+                <% end %>
               </strong></p>
             </div>
           </div>
           <div>
             <h4 class="kill-margin-top kill-margin-bottom">Naked Farmer</h4>
-            <p class="kill-margin-top kill-margin-bottom" id=reviews-number>3000 reviews</p>
+            <p class="kill-margin-top kill-margin-bottom" id=reviews-number>
+              <%= @alpaca.reviews.count.to_s %> reviews
+            </p>
           </div>
         </div>
         <div class="inline space-between user-rating">
           <div><p>Naked Farmer's Rating</p></div>
-          <div><p>8.6</p></div>
+          <div><p>THIS BIT IS STILL STATIC</p></div>
         </div>
         <div class="rating-bar"></div>
         <div class="inline space-between user-rating">
