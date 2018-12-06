@@ -1,14 +1,17 @@
 <div class="wrapper">
   <div class="container">
-    <div class="grid">
+    <div class="container-grid">
 
       <div class="alpaca-profile">
-      <%= image_tag("twocutealpacas", class: "alpaca-profile-picture")%>
+          <!-- <%= image_tag("twocutealpacas", class: "alpaca-profile-picture")%> -->
          <%= image_tag("sexyfarmer", class: "avatar-large alpaca-owner")%>
       </div>
 
+      <div class="alpaca-map"></div>
+
+
       <div class="alpaca-key-info">
-        <h2>Romeu & Juliet the Alpaca Couple</h2>
+        <h2 class="alpaca-key-title">Romeu & Juliet the Alpaca Couple</h2>
         <p>Bairro Alto, Lisbon</p>
         <p><strong>£100,000</strong></p>
       </div>
@@ -34,29 +37,44 @@
         <div><p>Location</p></div>
       </div>
 
-      <div class="alpaca-reviews">
-        <div class="top-half-review-row">
-          <div class="reviewer-photo">
-             <%= image_tag("https://source.unsplash.com/MTZTGvDsHFY/100x100", class: "avatar")%>
-          </div>
-          </div>
-          <div class="review-details">
-            <p>João Naruto</p>
-          <p> X days ago</p>
-          </div>
-
-        </div>
-
-      <div class="bottom-half-review">
-        <div class="alpaca-review"></div>
-
-      </div>
-        </div>
-      </div>
-
-
-      <div class="alpaca-map"></div>
       <div class="alpaca-calendar"></div>
+
+      <div class="alpaca-reviews">
+
+        <div>
+          <div class="top-half-review-row">
+            <div class="reviewer-photo">
+               <%= image_tag("https://source.unsplash.com/MTZTGvDsHFY/100x100", class: "avatar avatar-small")%>
+            </div>
+            <div class="review-details">
+              <p class="review-details-content-bold">João Naruto</p>
+              <p class="review-details-content"> X days ago</p>
+            </div>
+          </div>
+          <div class="bottom-half-review-row">
+              <p class="review-details-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed aspernatur aut quibusdam id officia laudantium saepe, adipisci est maiores temporibus, in fuga, iusto quaerat non molestias quisquam aliquam vel eaque.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="top-half-review-row">
+            <div class="reviewer-photo">
+               <%= image_tag("https://source.unsplash.com/MTZTGvDsHFY/100x100", class: "avatar avatar-small")%>
+            </div>
+            <div class="review-details">
+              <p class="review-details-content-bold">João Naruto</p>
+              <p class="review-details-content"> X days ago</p>
+            </div>
+          </div>
+          <div class="bottom-half-review-row">
+              <p class="review-details-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed aspernatur aut quibusdam id officia laudantium saepe, adipisci est maiores temporibus, in fuga, iusto quaerat non molestias quisquam aliquam vel eaque.</p>
+          </div>
+        </div>
+
+
+      </div>
+
     </div>
   </div>
 </div>
+
