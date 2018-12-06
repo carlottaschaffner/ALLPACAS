@@ -10,8 +10,10 @@ puts 'Creating users...'
 names = ["Carlotta", "Daniel", "Ines"]
 names.each do |name|
   user = User.new(
-    email: "#{rand(1..1000)}@railstutorial.org",
+    email: Faker::Internet.email,
     password: "foobar",
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name
   )
   user.save!
   puts "#{name}"
