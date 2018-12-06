@@ -3,73 +3,77 @@
     <div class="grid">
       <div class="picture-frame">
         <div class="alpaca-photo" id="alpaca-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-         url('<%= cl_image_path @alpaca.photo%>')">
-        </div>
-        <!-- <img id="alpaca-picture" src="https://images.unsplash.com/photo-1518259102261-b40117eabbc9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"> -->
-        <div>
-          <%= image_tag("sexyfarmer.jpg", class: "avatar-large alpaca-owner") %>
-        </div>
+        url('<%= cl_image_path @alpaca.photo%>')">
       </div>
-      <div class="alpaca-key-info">
-        <h2><%= @alpaca.name %></h2>
-        <p><%= @alpaca.address %></p>
-        <p><%= "color: #{@alpaca.color}" %></p>
-        <p><%= "age: #{@alpaca.age}" %></p>
-        <p><strong><%= @alpaca.price %>€</strong></p>
+      <!-- <img id="alpaca-picture" src="https://images.unsplash.com/photo-1518259102261-b40117eabbc9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"> -->
+      <div>
+        <%= image_tag("sexyfarmer.jpg", class: "avatar-large alpaca-owner") %>
       </div>
-      <div class="alpaca-description">
-        <p>This couple isn't actually here to serve you, in fact they're in need of couple therapy so please help if you can...</p>
-      </div>
-      <div class="alpaca-rating">
-        <div class="inline">
-          <div class="rating-block">
-            <div>
-              <p><strong>
-                <% unless @alpaca.reviews.average(:rating).nil? %>
-                  <%= @alpaca.reviews.average(:rating).round(1).to_s %>
-                <% else %>
-                  N/A
-                <% end %>
-              </strong></p>
-            </div>
-          </div>
+    </div>
+    <div class="alpaca-key-info">
+      <h2><%= @alpaca.name %></h2>
+      <p><%= @alpaca.address %></p>
+      <p><%= "color: #{@alpaca.color}" %></p>
+      <p><%= "age: #{@alpaca.age}" %></p>
+      <p><strong><%= @alpaca.price %>€</strong></p>
+    </div>
+    <div class="alpaca-description">
+      <p>This couple isn't actually here to serve you, in fact they're in need of couple therapy so please help if you can...</p>
+    </div>
+    <div class="alpaca-rating">
+      <div class="inline">
+        <div class="rating-block">
           <div>
-            <h4 class="kill-margin-top kill-margin-bottom">Naked Farmer</h4>
-            <p class="kill-margin-top kill-margin-bottom" id=reviews-number>
-              <%= @alpaca.reviews.count.to_s %> reviews
-            </p>
+            <p><strong>
+              <% unless @alpaca.reviews.average(:rating).nil? %>
+              <%= @alpaca.reviews.average(:rating).round(1).to_s %>
+              <% else %>
+              N/A
+              <% end %>
+            </strong></p>
           </div>
         </div>
-        <div class="inline space-between user-rating">
-          <div><p>Naked Farmer's Rating</p></div>
-          <div><p>THIS BIT IS STILL STATIC</p></div>
+        <div>
+          <h4 class="kill-margin-top kill-margin-bottom">Naked Farmer</h4>
+          <p class="kill-margin-top kill-margin-bottom" id=reviews-number>
+            <%= @alpaca.reviews.count.to_s %> reviews
+          </p>
         </div>
-        <div class="rating-bar"></div>
-        <div class="inline space-between user-rating">
-          <div><p>
-            <%= "#{@alpaca.name}'s Rating"
-            %></p></div>
+      </div>
+      <div class="inline space-between user-rating">
+        <div><p>Naked Farmer's Rating</p></div>
+        <div><p>THIS BIT IS STILL STATIC</p></div>
+      </div>
+      <div class="rating-bar"></div>
+      <div class="inline space-between user-rating">
+        <div><p>
+          <%= "#{@alpaca.name}'s Rating"
+          %></p></div>
           <div><p>8.6</p></div>
         </div>
         <div class="rating-bar"></div>
       </div>
       <div class="alpaca-reviews">
         <% @alpaca.reviews.each do |review| %>
-          <div class="review">
-            <div class="inline">
-              <div class="avatar-small"></div>
-                <div class="reviewer">
-                  <div><p><strong><%= review.user.email %></strong></p></div>
-                  <div><p>X Days ago</p></div>
-                </div>
+        <div class="review">
+          <div class="inline">
+            <div class="avatar-small"></div>
+            <div class="reviewer">
+              <div><p><strong><%= review.user.email %></strong></p></div>
+              <div><p>X Days ago</p></div>
             </div>
-            <p><%= review.description %></p>
           </div>
+          <p><%= review.description %></p>
+        </div>
         <% end %>
       </div>
       <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-      <div class="alpaca-calendar"></div>
+      <div class="alpaca-calendar">
+        <div class="booking-form">
+          <%= render 'booking_form' %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
