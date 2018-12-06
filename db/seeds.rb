@@ -33,6 +33,7 @@ names.each do |name|
     user: User.all.sample
   )
   alpaca.remote_photo_url = "https://source.unsplash.com/collection/1935696/"
+  # sleep(2)
   alpaca.save!
   puts "#{name}"
 end
