@@ -10,4 +10,8 @@ class AlpacasController < ApplicationController
     authorize @alpaca
     @booking = Booking.new
   end
+
+  def alpaca_params
+    params.require(:alpaca).permit(:name, :color, :age, :price, :photo)
+  end
 end
