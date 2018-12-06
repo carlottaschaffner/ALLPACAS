@@ -1,23 +1,17 @@
 <div class="wrapper">
   <div class="container">
     <div class="grid">
-
-      <div class="alpaca-profile">
-      <%= image_tag("alpaca-face.jpeg", class: "alpaca-profile-picture")%>
-         <%= image_tag("sexyfarmer.jpg", class: "avatar-large alpaca-owner")%>
+      <div class="alpaca-picture">
+        <div class="avatar-large alpaca-owner"></div>
       </div>
-
       <div class="alpaca-key-info">
-        <h3>Romeo</h3>
+        <h2>Romeo</h2>
         <p>Bairro Alto, Lisbon</p>
         <p><strong>£100,000</strong></p>
       </div>
-
       <div class="alpaca-description">
-        <p> This couple isn't actually here to serve you, in fact they're in need of couple therapy so please help if you can...
-        </p>
+        <p>This couple isn't actually here to serve you, in fact they're in need of couple therapy so please help if you can...</p>
       </div>
-
       <div class="alpaca-rating">
         <div class="inline">
           <div class="rating-block">
@@ -26,35 +20,37 @@
             </div>
           </div>
           <div>
-            <h5>Naked Farmer</h5>
-            <p id=reviews-number>3000 reviews</p>
+            <h4 class="kill-margin-top kill-margin-bottom">Naked Farmer</h4>
+            <p class="kill-margin-top kill-margin-bottom" id=reviews-number>3000 reviews</p>
           </div>
         </div>
-        <div><p>Value for money</p></div>
-        <div><p>Location</p></div>
+        <div class="inline space-between user-rating">
+          <div><p>Naked Farmer's Rating</p></div>
+          <div><p>8.6</p></div>
+        </div>
+        <div class="rating-bar"></div>
+        <div class="inline space-between user-rating">
+          <div><p>Romeo's Rating</p></div>
+          <div><p>8.6</p></div>
+        </div>
+        <div class="rating-bar"></div>
       </div>
-
       <div class="alpaca-reviews">
-        <div class="top-half-review-row">
-          <div class="reviewer-photo">
-             <%= image_tag("https://source.unsplash.com/MTZTGvDsHFY/100x100", class: "avatar")%>
+        <div class="review">
+          <div class="inline">
+            <div class="avatar-small"></div>
+            <div>
+              <div class="reviewer">
+                <div><p><strong>Shannon</strong></p></div>
+                <div><p>X Days ago</p></div>
+              </div>
+            </div>
           </div>
-          </div>
-          <div class="review-details">
-            <p>João Naruto</p>
-          <p> X days ago</p>
-          </div>
-
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
       </div>
-        </div>
-      </div>
-      <div class="alpaca-calendar">
-        <%#= simple_form_for @alpaca.name do |f| %>
-          <%#= f.input :start_date, as: :date, html: { class: "crawl_start_date"} %>
-          <%#= f.input :start_date, as: :date, html: { class: "crawl_start_date"} %>
-        <%# end %>
-      </div>
+      <div class="alpaca-map"></div>
+      <div class="alpaca-calendar"></div>
     </div>
   </div>
 </div>
