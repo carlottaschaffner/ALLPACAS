@@ -9,6 +9,13 @@ class AlpacasController < ApplicationController
     @alpaca = Alpaca.find(params[:id])
     authorize @alpaca
     @booking = Booking.new
+
+    # @geolocated_alpaca = Alpaca.where.not(latitude: nil, longitude: nil)
+    @markers = [{
+            lng: @alpaca.longitude,
+            lat: @alpaca.latitude
+            # infoWindow: { content: render_to_string(partial: "/alpacas/map_window", locals: { flat: flat }) }
+        }]
   end
 
   def alpaca_params

@@ -23,7 +23,13 @@ ActiveRecord::Schema.define(version: 2018_12_06_115643) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+
     t.string "photo"
+
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
+
     t.index ["user_id"], name: "index_alpacas_on_user_id"
   end
 
