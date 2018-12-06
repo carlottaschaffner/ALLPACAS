@@ -17,4 +17,8 @@ class AlpacasController < ApplicationController
             # infoWindow: { content: render_to_string(partial: "/alpacas/map_window", locals: { flat: flat }) }
         }]
   end
+
+  def alpaca_params
+    params.require(:alpaca).permit(:name, :color, :age, :price, :photo)
+  end
 end

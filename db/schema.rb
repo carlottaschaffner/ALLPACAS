@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2018_12_06_150452) do
     t.float "longitude"
     t.string "address"
     t.text "description"
+    t.string "photo"
     t.index ["user_id"], name: "index_alpacas_on_user_id"
   end
 
