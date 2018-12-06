@@ -5,8 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-puts 'Creating users...'
+ puts 'Creating users...'
 10.times do |user|
   user = User.new(
     email: Faker::Internet.email,
@@ -17,11 +16,8 @@ puts 'Creating users...'
   user.save!
   puts "#{user}"
 end
-
-puts "Created #{User.count} users..."
-
-
-puts 'Creating alpacas...'
+ puts "Created #{User.count} users..."
+ puts 'Creating alpacas...'
 names = ["Bill", "Bob", "Fred", "Paco", "Jorge", "Andy", "Sherman"]
 names.each do |name|
   alpaca = Alpaca.new(
@@ -38,14 +34,10 @@ names.each do |name|
   alpaca.save!
   puts "#{name}"
 end
-
-puts "Created #{Alpaca.count} alpacas..."
-
-
-# Seed bookings
+ puts "Created #{Alpaca.count} alpacas..."
+ # Seed bookings
 puts 'Creating bookings...'
-
-10.times do |booking|
+ 10.times do |booking|
   booking = Booking.new(
     start_date: 20181201,
     end_date: 20181202,
@@ -55,11 +47,8 @@ puts 'Creating bookings...'
   booking.save!
   puts "#{booking}"
 end
-
-puts "Created #{Booking.count} reviews..."
-
-
-# Seed reviews
+ puts "Created #{Booking.count} reviews..."
+ # Seed reviews
 puts 'Creating reviews...'
 titles = [
   "Great allpaca!",
@@ -67,9 +56,14 @@ titles = [
   "Best day of my life",
   "Great day at the park",
   "Last night an alpaca saved my life"
+  "5 stars"
 ]
-
-100.times do |review|
+ description = [
+  "The owner was communicative and the alpaca was super perky!",
+  "Jonny Alpacker is the best one in the world",
+  "Amazing experience, the alpaca was super fluffy."
+]
+ 100.times do |review|
   review = Review.new(
     title: titles.sample,
     description: Faker::GameOfThrones.quote,
@@ -79,5 +73,4 @@ titles = [
   review.save!
   puts "#{review.title}"
 end
-
-puts "Created #{Review.count} reviews..."
+ puts "Created #{Review.count} reviews..."
