@@ -18,7 +18,7 @@
           <div class="rating-block">
             <div>
               <p><strong>
-              <%= @alpaca.reviews.average(:rating).to_s %>
+              <%= @alpaca.reviews.average(:rating).round(1).to_s %>
               </strong></p>
             </div>
           </div>
