@@ -1,8 +1,8 @@
 .avatar-large {
-  width: 115px;
-  height: 115px;
+  width: 145px;
+  height: 145px;
   border-radius: 50%;
-  margin: 10px;
+  margin: 15px;
 }
 
 .avatar-small {
@@ -17,6 +17,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
 }
 
 // .avatar-large:hover {
@@ -34,23 +35,31 @@
 .text {
   opacity: 0;
   position: absolute;
-  font-size: 14px;
+  font-size: 16px;
   background: $beige;
-  width: 115px;
-  height: 115px;
+  width: 145px;
+  height: 145px;
   border-radius: 50%;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  margin: 10px;
+  margin: 15px;
 }
 
 .text:hover {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
+.avatar-medium {
+  position: absolute;
+  bottom: 40px;
+  left: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
 
 
 .avatar-large.alpaca-owner {

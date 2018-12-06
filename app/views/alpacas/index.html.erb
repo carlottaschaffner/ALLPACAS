@@ -1,7 +1,8 @@
-<div class="banner banner-about" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1512666648029-2a86e8688984?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=715&q=80');">
+<div class="banner banner-about" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.5) 50%), url('https://images.unsplash.com/photo-1482860679342-ceecba53fef4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');">
   <div class="about-alpacas">
-    <h1>About Alpacas:</h1>
-    <p>The Alpaca is a species of South American camelid. It is similar to, and often confused with, the llama. However, alpacas are often noticeably smaller than llamas. Their fur comes in more than 52 natural colors and is hilariously fluffy. Alpacas communicate through body language. The most common is spitting when they are in distress, i mean...obviously.</p>
+    <h1>Find the Alpaca of your dreams...</h1>
+    <p>
+    The Alpaca is a species of South American camelid. It is similar to, and often confused with, the llama. However, alpacas are often noticeably smaller than llamas. Their fur comes in more than 52 natural colors and is hilariously fluffy.</p>
   </div>
 </div>
 
@@ -12,13 +13,23 @@
         <div class="alpaca">
           <div class="alpaca-photo" >
             <%= image_tag "https://source.unsplash.com/featured/300x200/?alpacas" %>
+              <%= image_tag("sexyfarmer.jpg", class: "avatar-medium") %>
           </div>
           <div class="alpaca-details">
             <div class="alpaca-name">
-              <%= alpaca.name %>
+              <h3><%= alpaca.name %></h3>
+            </div>
+            <div class="alpaca-color">
+              <%= alpaca.color %>
+            </div>
+            <div class="alpaca-age">
+              <%= alpaca.age %>
             </div>
             <div class="alpaca-row">
               <span class="alpacas-reviews_count">34 reviews</span>
+              <span class="alpacas-price">
+                <strong><%= alpaca.price %>€</strong>
+              </span>
             </div>
           </div>
           <div class="alpaca-action text-center">
@@ -30,12 +41,4 @@
   </div>
 </div>
 
-<!-- <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-  <div class="card-category">Popular</div>
-  <div class="card-description">
-    <h2>Le Wagon Shanghai</h2>
-    <p>Very cool city, the best</p>
-  </div>
-  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-  <a class="card-link" href="#" ></a>
-</div> -->
+
