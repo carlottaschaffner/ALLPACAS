@@ -7,8 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts 'Creating users...'
-names = ["Carlotta", "Daniel", "Ines"]
-names.each do |name|
+10.times do |user|
   user = User.new(
     email: Faker::Internet.email,
     password: "foobar",
@@ -16,7 +15,7 @@ names.each do |name|
     last_name: Faker::Name.last_name
   )
   user.save!
-  puts "#{name}"
+  puts "#{user}"
 end
 
 puts "Created #{User.count} users..."
