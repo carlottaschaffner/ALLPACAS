@@ -1,11 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
- puts 'Creating users...'
+# Creates users
+puts 'Creating users...'
+
 10.times do |user|
   user = User.new(
     email: Faker::Internet.email,
@@ -16,8 +11,11 @@
   user.save!
   puts "#{user}"
 end
- puts "Created #{User.count} users..."
- puts 'Creating alpacas...'
+
+puts "Created #{User.count} users..."
+
+# Creates alpacas
+puts 'Creating alpacas...'
 names = ["Bill", "Bob", "Fred", "Paco", "Jorge", "Andy", "Sherman"]
 names.each do |name|
   alpaca = Alpaca.new(
@@ -34,8 +32,10 @@ names.each do |name|
   alpaca.save!
   puts "#{name}"
 end
- puts "Created #{Alpaca.count} alpacas..."
- # Seed bookings
+
+puts "Created #{Alpaca.count} alpacas..."
+
+# Creates bookings
 puts 'Creating bookings...'
  10.times do |booking|
   booking = Booking.new(
@@ -47,9 +47,12 @@ puts 'Creating bookings...'
   booking.save!
   puts "#{booking}"
 end
- puts "Created #{Booking.count} reviews..."
- # Seed reviews
+
+puts "Created #{Booking.count} reviews..."
+
+# Seed reviews
 puts 'Creating reviews...'
+
 titles = [
   "Great allpaca!",
   "Amazing experience!",
@@ -63,14 +66,16 @@ titles = [
   "Jonny Alpacker is the best one in the world",
   "Amazing experience, the alpaca was super fluffy."
 ]
- 100.times do |review|
-  review = Review.new(
-    title: titles.sample,
-    description: Faker::Hipster.paragraphs,
-    rating: rand(3..5),
-    booking: Booking.all.sample
+
+100.times do |review|
+review = Review.new(
+  title: titles.sample,
+  description: Faker::Hipster.paragraph,
+  rating: rand(3..5),
+  booking: Booking.all.sample
   )
   review.save!
   puts "#{review.title}"
 end
- puts "Created #{Review.count} reviews..."
+
+puts "Created #{Review.count} reviews..."
