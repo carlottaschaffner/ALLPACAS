@@ -13,9 +13,9 @@
     <div class="alpaca-key-info">
       <h2><%= @alpaca.name %></h2>
       <p><%= @alpaca.address %></p>
-      <p><%= "color: #{@alpaca.color}" %></p>
-      <p><%= "age: #{@alpaca.age}" %></p>
-      <p><strong><%= @alpaca.price %>€</strong></p>
+      <p><%= "Color: #{@alpaca.color}" %></p>
+      <p><%= "Age: #{@alpaca.age}" %></p>
+      <p><strong>Price: <%= @alpaca.price %>€ per day</strong></p>
     </div>
     <div class="alpaca-description">
       <p>I am an alpaca and I am fucking awesome. I'm furry, well cute, apart from when I spit at people but they don't even do anything cos they are a bunch of pusaaaaaayyyyyzzzzz.</p>
@@ -41,14 +41,13 @@
         </div>
       </div>
       <div class="inline space-between user-rating">
-        <div><p>Naked Farmer's Rating</p></div>
+        <div><p><%= @alpaca.name %>'s Rating</p></div>
+        <div><p>8.6</p></div>
    <!--      <div><p>THIS BIT IS STILL STATIC</p></div> -->
       </div>
       <div class="rating-bar"></div>
       <div class="inline space-between user-rating">
-        <div><p>
-          <%= "#{@alpaca.name}'s Rating"
-          %></p></div>
+        <div><p><%= @alpaca.user.first_name %>'s Rating</p></div>
           <div><p>8.6</p></div>
         </div>
         <div class="rating-bar"></div>
@@ -56,14 +55,26 @@
       <div class="alpaca-reviews">
         <% @alpaca.reviews.each do |review| %>
         <div class="review">
-          <div class="inline">
-            <div class="avatar-small"></div>
-            <div class="reviewer">
-              <div><p><strong>
-                <%= review.user.first_name %>
-                <%= review.user.last_name %>
-                </strong></p></div>
-              <div><p>X Days ago</p></div>
+          <div class="inline space-between">
+            <div>
+              <div class="avatar-small"></div>
+              <div class="reviewer">
+                <div>
+                  <p><strong>
+                    <%= review.user.first_name %>
+                    <%= review.user.last_name %>
+                  </strong></p>
+                </div>
+                <div><p>X Days ago</p></div>
+              </div>
+            </div>
+            <div class="stars">
+              <% review.rating.times do %>
+              <i class="fas fa-star"></i>
+              <% end %>
+              <% (5 - review.rating).times do %>
+              <i class="far fa-star"></i>
+              <% end %>
             </div>
           </div>
           <p><%= review.description %></p>
