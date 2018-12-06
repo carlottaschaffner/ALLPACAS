@@ -1,16 +1,16 @@
 .grid {
   display: grid;
   grid-template-columns: auto 30% 35%;
-  grid-template-rows: 350px 175px 175px 500px;
-  border: solid;
-  border-color: black 1px;
+  grid-template-rows: 350px 175px 175px auto;
+  // border: solid;
+  // border-color: black 1px;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
 }
  .picture-frame {
   grid-column: 1 / span 2;
   grid-row: 1 / span 1;
-  background-color: blue;
+  // background-color: blue;
   position: relative;
   overflow: hidden;
 }
@@ -24,17 +24,23 @@
  .alpaca-key-info {
   grid-column: 1 / span 1;
   grid-row: 2 / span 1;
-  background-color: red;
+  // background-color: red;
 }
+
+ .alpaca-key-info p {
+  font-size: 16px;
+  margin-bottom: 5px;
+ }
 
  .alpaca-key-info h2 {
   margin-top: 0px;
+  margin-bottom: 5px;
  }
 
  .alpaca-rating {
   grid-column: 2 / span 1;
   grid-row: 2 / span 1;
-  background-color: green;
+  // background-color: green;
 }
  .alpaca-description {
   grid-column: 1 / span 2;
@@ -43,18 +49,18 @@
  .alpaca-reviews {
   grid-column: 1 / span 2;
   grid-row: 4 / span 1;
-  background-color: yellow;
+  // background-color: yellow;
   overflow: hidden;
 }
  #map {
   grid-column: 3 / span 1;
   grid-row: 1 / span 1;
-  background-color: purple;
+  // background-color: purple;
 }
  .alpaca-calendar {
   grid-column: 3 / span 1;
   grid-row: 2 / span 2;
-  background-color: orange;
+  // background-color: orange;
 }
  .rating-block {
   width: 60px;
@@ -115,5 +121,17 @@
 }
 
 .review {
-  margin-bottom: 15px;
+  margin-bottom: 50px;
+}
+
+.stars {
+  // margin-top: 20px;
+}
+
+.fa-star {
+  color: rgb(7.0, 81.0, 72.0);
+}
+
+.fa-star {
+  color: rgb(7.0, 81.0, 72.0);
 }
