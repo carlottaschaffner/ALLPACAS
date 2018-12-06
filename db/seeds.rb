@@ -5,14 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Alpaca.destroy_all
-User.destroy_all
 
 puts 'Creating users...'
 names = ["Carlotta", "Daniel", "Ines"]
 names.each do |name|
   user = User.new(
-    email: "#{rand(10..100)}@railstutorial.org",
+    email: "#{rand(1..1000)}@railstutorial.org",
     password: "foobar",
   )
   user.save!
@@ -29,6 +27,8 @@ names.each do |name|
     name: name,
     price: rand(10..100),
     color: ["brown", "camel", "cream", "off-white", "chocolate", "coffee"].sample,
+    description: Faker::GameOfThrones.quote,
+    address: Faker::Address.city,
     age: rand(1..54),
     user: User.all.sample
   )
@@ -72,10 +72,10 @@ description = [
   "Amazing experience, the alpaca was super fluffy."
 ]
 
-10.times do |review|
+100.times do |review|
   review = Review.new(
     title: titles.sample,
-    description: description.sample,
+    description: Faker::GameOfThrones.quote,
     rating: rand(3..5),
     booking: Booking.all.sample
   )
