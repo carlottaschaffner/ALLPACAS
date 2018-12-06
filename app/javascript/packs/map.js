@@ -9,9 +9,9 @@ if (mapElement) { // only build a map if there's a div#map to inject into
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v10'
   });
-}
+// }
 
-if (mapElement) {
+// if (mapElement) {
 // [ ... ]
   const markers = JSON.parse(mapElement.dataset.markers);
 
@@ -20,9 +20,9 @@ if (mapElement) {
       .setLngLat([marker.lng, marker.lat])
       .addTo(map);
   })
-}
+// }
 
-if (mapElement) {
+// if (mapElement) {
   // [ ... ]
 
   if (markers.length === 0) {
@@ -37,4 +37,16 @@ if (mapElement) {
     });
     map.fitBounds(bounds, { duration: 0, padding: 75 })
   }
+// }
+
+// if (mapElement) {
+// [ ... ]
+  markers.forEach((marker) => {
+    new mapboxgl.Marker()
+      .setLngLat([marker.lng, marker.lat])
+      .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+      .setHTML(marker.infoWindow.content))
+      .addTo(map);
+  })
+// [ ... ]
 }
