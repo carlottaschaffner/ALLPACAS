@@ -64,13 +64,9 @@ puts 'Creating reviews...'
 titles = [
   "Great allpaca!",
   "Amazing experience!",
-  "5 stars"
-]
-
-description = [
-  "The owner was communicative and the alpaca was super perky!",
-  "Jonny Alpacker is the best one in the world",
-  "Amazing experience, the alpaca was super fluffy."
+  "Best day of my life",
+  "Great day at the park",
+  "Last night an alpaca saved my life"
 ]
 
 100.times do |review|

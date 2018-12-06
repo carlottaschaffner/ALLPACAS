@@ -12,7 +12,6 @@ class BookingsController < ApplicationController
 
     @booking.user = current_user
     @booking.alpaca = @alpaca
-    # raise
     if @booking.save
       redirect_to alpaca_path(@alpaca)
     else
