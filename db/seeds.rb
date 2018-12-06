@@ -55,7 +55,7 @@ titles = [
   "Amazing experience!",
   "Best day of my life",
   "Great day at the park",
-  "Last night an alpaca saved my life"
+  "Last night an alpaca saved my life",
   "5 stars"
 ]
  description = [
@@ -66,7 +66,7 @@ titles = [
  100.times do |review|
   review = Review.new(
     title: titles.sample,
-    description: Faker::GameOfThrones.quote,
+    description: Faker::Hipster.paragraphs,
     rating: rand(3..5),
     booking: Booking.all.sample
   )
