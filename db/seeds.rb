@@ -14,6 +14,7 @@ end
 
 puts "Created #{User.count} users..."
 
+
 # Creates alpacas
 puts 'Creating alpacas...'
 names = ["Bill", "Bob", "Fred", "Paco", "Jorge", "Andy", "Sherman"]
@@ -35,8 +36,23 @@ end
 
 puts "Created #{Alpaca.count} alpacas..."
 
+
 # Creates bookings
 puts 'Creating bookings...'
+
+User.all.each do |user|
+  rand(1..10).times do |booking|
+    booking = Booking.new(
+      start_date: 20181201,
+      end_date: 20181202,
+      user: user,
+      alpaca: Alpaca.all.sample
+    )
+    booking.save!
+    puts "#{booking.id}"
+  end
+end
+
  10.times do |booking|
   booking = Booking.new(
     start_date: 20181201,
