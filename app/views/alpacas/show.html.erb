@@ -6,9 +6,9 @@
         <div class="avatar-large alpaca-owner"></div>
       </div>
       <div class="alpaca-key-info">
-        <h2>Romeo</h2>
+        <h2><%= @alpaca.name %></h2>
         <p>Bairro Alto, Lisbon</p>
-        <p><strong>£100,000</strong></p>
+        <p><strong><%= @alpaca.price %>€</strong></p>
       </div>
       <div class="alpaca-description">
         <p>This couple isn't actually here to serve you, in fact they're in need of couple therapy so please help if you can...</p>
@@ -17,7 +17,9 @@
         <div class="inline">
           <div class="rating-block">
             <div>
-              <p><strong>8.5</strong></p>
+              <p><strong>
+              <%= @alpaca.reviews.average(:rating).to_s %>
+              </strong></p>
             </div>
           </div>
           <div>
@@ -37,18 +39,18 @@
         <div class="rating-bar"></div>
       </div>
       <div class="alpaca-reviews">
-        <div class="review">
-          <div class="inline">
-            <div class="avatar-small"></div>
-            <div>
-              <div class="reviewer">
-                <div><p><strong>Shannon</strong></p></div>
-                <div><p>X Days ago</p></div>
-              </div>
+        <% @alpaca.reviews.each do |review| %>
+          <div class="review">
+            <div class="inline">
+              <div class="avatar-small"></div>
+                <div class="reviewer">
+                  <div><p><strong><%= review.user.email %></strong></p></div>
+                  <div><p>X Days ago</p></div>
+                </div>
             </div>
+            <p><%= review.description %></p>
           </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
+        <% end %>
       </div>
       <div class="alpaca-map"></div>
       <div class="alpaca-calendar"></div>

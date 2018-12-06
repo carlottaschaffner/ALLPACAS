@@ -1,5 +1,6 @@
 class Alpaca < ApplicationRecord
   has_many :bookings
+  has_many :reviews, through: :bookings
   belongs_to :user
 
   validates :name, presence: true
