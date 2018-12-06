@@ -15,8 +15,8 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-gem "geocoder"
-
+gem 'geocoder'
+gem 'faker'
 gem 'devise'
 gem 'pundit'
 
