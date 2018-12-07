@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
     reviews = policy_scope(Review).order(created_at: :desc)
     @review = Review.new
     @user_reviews = current_user.reviews
+    @user_bookings = current_user.bookings
     authorize reviews
   end
 
@@ -17,11 +18,6 @@ class ReviewsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def show
-    # @review = Review.all
-    # authorize @review
   end
 
   private

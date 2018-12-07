@@ -19,7 +19,7 @@ colors =
 puts 'Creating users...'
 
 # Creates test user
-User.new(
+user = User.new(
   email: "all@packer.com",
   password: "foobar",
   first_name: Faker::Name.first_name,
