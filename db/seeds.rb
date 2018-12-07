@@ -18,6 +18,10 @@ colors =
 # Creates users
 puts 'Creating users...'
 
+n_users = 10
+n_alpacas = 3
+n_bookings = n_users * 5
+
 # Creates test user
 user = User.new(
   email: "all@packer.com",
@@ -27,7 +31,7 @@ user = User.new(
   )
 user.save!
 
-10.times do |user|
+n_users.times do |user|
   user = User.new(
     email: Faker::Internet.email,
     password: "foobar",
@@ -43,7 +47,7 @@ puts "Created #{User.count} users..."
 # Creates alpacas
 puts 'Creating alpacas...'
 # names = ["Bill", "Bob", "Fred", "Paco", "Jorge", "Andy", "Sherman"]
-3.times do
+n_alpacas.times do
   alpaca = Alpaca.new(
     name: Faker::Name.first_name,
     price: rand(50..300),
@@ -54,7 +58,6 @@ puts 'Creating alpacas...'
     user: User.all.sample
   )
   alpaca.remote_photo_url = "https://source.unsplash.com/collection/1935696/"
-  sleep(2)
   alpaca.save!
   puts "#{alpaca.name}"
 end
@@ -65,7 +68,7 @@ puts "Created #{Alpaca.count} alpacas..."
 # Creates 100 bookings with reviews
 puts 'Creating bookings...'
 
-100.times do |booking|
+n_bookings.times do |booking|
   booking = Booking.new(
     start_date: 20181201,
     end_date: 20181202,
@@ -77,7 +80,9 @@ puts 'Creating bookings...'
 
   review = Review.new(
     title: titles.sample,
-    description: Faker::Hipster.paragraph,
+    description: "#{Faker::Hipster.paragraph},
+                  #{Faker::Hipster.paragraph},
+                  #{Faker::Hipster.paragraph}",
     rating: rand(3..5),
     booking: booking
     )
@@ -88,7 +93,7 @@ end
 # Creates 50 bookings without reviews
 
 puts 'Creating bookings...'
-50.times do |booking|
+n_bookings.times do |booking|
   booking = Booking.new(
     start_date: 20181201,
     end_date: 20181202,
