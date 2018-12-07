@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :alpacas, only: [:index, :show] do
     resources :bookings, only: [:new, :create]
-    get 'user/dashboard', to:'alpacas#dashboard'
     # resources :reviews, only: [:index, :new, :create, :show]
   end
+  get 'user/dashboard', to:'alpacas#dashboard'
   resources :reviews, only: [:index, :create]
 
 end
