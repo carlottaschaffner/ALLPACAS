@@ -43,7 +43,7 @@ puts "Created #{User.count} users..."
 # Creates alpacas
 puts 'Creating alpacas...'
 # names = ["Bill", "Bob", "Fred", "Paco", "Jorge", "Andy", "Sherman"]
-18.times do
+3.times do
   alpaca = Alpaca.new(
     name: Faker::Name.first_name,
     price: rand(50..300),
@@ -65,18 +65,18 @@ puts "Created #{Alpaca.count} alpacas..."
 # Creates bookings
 puts 'Creating bookings...'
 
-User.all.each do |user|
-  rand(1..10).times do |booking|
-    booking = Booking.new(
-      start_date: 20181201,
-      end_date: 20181202,
-      user: user,
-      alpaca: Alpaca.all.sample
-    )
-    booking.save!
-    puts "#{booking.id}"
-  end
-end
+# User.all.each do |user|
+#   rand(1..10).times do |booking|
+#     booking = Booking.new(
+#       start_date: 20181201,
+#       end_date: 20181202,
+#       user: user,
+#       alpaca: Alpaca.all.sample
+#     )
+#     booking.save!
+#     puts "#{booking.id}"
+#   end
+# end
 
 100.times do |booking|
   booking = Booking.new(
@@ -85,8 +85,6 @@ end
     user: User.all.sample,
     alpaca: Alpaca.all.sample
   )
-  booking.save!
-  puts "#{booking}"
 
   review = Review.new(
     title: titles.sample,
@@ -94,7 +92,9 @@ end
     rating: rand(3..5),
     booking: booking
     )
-    review.save!
+  booking.save!
+  puts "#{booking}"
+  review.save!
   puts "#{review.title}"
 end
 
