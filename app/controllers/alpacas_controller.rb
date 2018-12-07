@@ -21,4 +21,10 @@ class AlpacasController < ApplicationController
   def alpaca_params
     params.require(:alpaca).permit(:name, :color, :age, :price, :photo)
   end
+
+  def dashboard
+    #this is not secure - but were going to role with it for now
+    authorize @alpacas = current_user.alpacas
+  end
+
 end

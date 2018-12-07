@@ -1,5 +1,6 @@
 <div class="wrapper">
   <div class="container">
+
     <div class="grid">
       <div class="picture-frame">
         <div class="alpaca-photo" id="alpaca-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
@@ -52,6 +53,7 @@
         </div>
         <div class="rating-bar"></div>
       </div>
+
       <div class="alpaca-reviews">
         <% @alpaca.reviews.each do |review| %>
         <div class="review">
@@ -88,6 +90,8 @@
           <%= render 'booking_form' %>
         </div>
       </div>
+
     </div>
   </div>
 </div>
+

@@ -8,4 +8,8 @@ class AlpacaPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def dashboard?
+    return true
+  end
 end
