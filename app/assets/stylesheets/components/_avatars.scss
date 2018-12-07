@@ -11,6 +11,7 @@
   border-radius: 50%;
   margin-bottom: 10px;
   background-color: gray;
+  overflow: hidden;
 }
 
 .avatarsss {
@@ -64,5 +65,11 @@
   bottom: 10px;
   left: 10px;
   background-color: gray;
+}
+
+.placeholder-avatar {
+  object-fit: cover;
+  width:100%;
+  height:100%;
 }
 
