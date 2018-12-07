@@ -9,4 +9,10 @@ class AlpacasController < ApplicationController
     @alpaca = Alpaca.find(params[:id])
     authorize @alpaca
   end
+
+  def dashboard
+    #this is not secure - but were going to role with it for now
+    authorize @alpacas = current_user.alpacas
+  end
+
 end
