@@ -19,7 +19,7 @@ colors =
 puts 'Creating users...'
 
 n_users = 10
-n_alpacas = 3
+n_alpacas = 18
 n_bookings = n_alpacas * 5
 
 # Creates test user
@@ -89,19 +89,5 @@ n_bookings.times do |booking|
   review.save!
   # puts "#{review.title}"
 end
-
-# Creates 50 bookings without reviews
-
-# puts 'Creating bookings...'
-# 1.times do |booking|
-#   booking = Booking.new(
-#     start_date: 20181201,
-#     end_date: 20181202,
-#     user: User.first,
-#     alpaca: Alpaca.all.sample
-#   )
-#   booking.save!
-#   # puts "#{booking}"
-# end
 
 puts "Created #{Booking.count} bookings..."

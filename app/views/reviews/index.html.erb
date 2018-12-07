@@ -1,10 +1,13 @@
-<h2>Past Reviews You’ve Written</h2>
+<h2>Past allpaca bookings</h2>
 
-<% current_user.reviews.each do |review| %>
+<% current_user.bookings.each do |booking| %>
   <ul>
     <li>
-     <h5><%= review.title %></h5>
-     <p><%= review.description %></p>
+     <h3>Alpaca name: <%= booking.alpaca.name %></h3>
+     <p>Booked between <%= booking.start_date %> and <%= booking.end_date %></p>
+     <div class="alpaca-photo-big" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+            url('<%= cl_image_path booking.alpaca.photo, width: 1000, crop: :fill %>')">
+            </div>
     </li>
   </ul>
 <% end %>
