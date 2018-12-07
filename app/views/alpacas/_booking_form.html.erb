@@ -1,0 +1,25 @@
+<h4>Place your Booking</h4>
+
+<!-- <input type="text" id="demo"> -->
+<%= simple_form_for [@alpaca, @booking] do |f| %>
+  <div class="form-inputs">
+    <%= f.input :start_date, as: :string %>
+    <%= f.input :end_date, as: :string %>
+  </div>
+
+  <div class="form-actions">
+    <% if user_signed_in? %>
+      <button onclick="bookingConfirmation()", class="btn btn-green">Book</button>
+
+      <script>
+        function bookingConfirmation() {
+        confirm("Your ALLPACAS booking is confirmed");
+        }
+      </script>
+    <% else %>
+    <div class="login-prompt">
+      <em>Log in or sign up to book <%=@alpaca.name %>!</em>
+    </div>
+    <% end %>
+  </div>
+<% end %>

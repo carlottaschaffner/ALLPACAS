@@ -1,13 +1,61 @@
 .avatar-large {
-  width: 110px;
-  height: 110px;
+  width: 145px;
+  height: 145px;
   border-radius: 50%;
   margin: 10px;
 }
 
 .avatar-small {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  background-color: gray;
+}
+
+.avatarsss {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0px;
+}
+
+// .avatar-large:hover {
+//   opacity: 0.7;
+//   background: red;
+//   z-index: 99;
+// }
+
+.avatar-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  opacity: 0;
+  position: absolute;
+  font-size: 16px;
+  background: $beige;
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.text:hover {
+  opacity: 0.9;
+}
+
+.avatar-medium {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
 }
 
 .avatar-large.alpaca-owner {
@@ -17,6 +65,3 @@
   background-color: gray;
 }
 
-.avatar {
-  border-radius: 50%;
-}

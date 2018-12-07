@@ -1,0 +1,19 @@
+<h2>Place your Review</h2>
+
+<% current_user.bookings.each do |booking| %>
+  <% if booking.review.nil? %>
+    <%= simple_form_for @review do |f| %>
+      <div class="form-inputs">
+        <%= f.input :title, required: true %>
+        <%= f.input :description, required: true %>
+        <%= f.collection_radio_buttons :rating, [[5], [4], [3], [2], [1]], :first, :last, item_wrapper_tag: false, boolean_style: :inline do |b| %>
+        <%= b.radio_button + b.label {''} %>
+        <%= f.hidden_field :booking, value: booking.id %>
+        <% end %>
+      </div>
+      <div class="form-actions"><%= f.button :submit, "Submit" %></div>
+    <% end %>
+    <% else %>
+      <!-- <p>Nobody to review right now. Looks like it’s time to book another Allpaca!</p> -->
+    <% end %>
+<% end %>

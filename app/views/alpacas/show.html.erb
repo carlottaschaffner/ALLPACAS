@@ -1,77 +1,94 @@
 <div class="wrapper">
   <div class="container">
-    <div class="container-grid">
 
-      <div class="alpaca-profile">
-          <!-- <%= image_tag("twocutealpacas", class: "alpaca-profile-picture")%> -->
-         <%= image_tag("sexyfarmer", class: "avatar-large alpaca-owner")%>
+    <div class="grid">
+      <div class="picture-frame">
+        <div class="alpaca-photo" id="alpaca-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+        url('<%= cl_image_path @alpaca.photo%>')">
       </div>
-
-      <div class="alpaca-map"></div>
-
-
-      <div class="alpaca-key-info">
-        <h2 class="alpaca-key-title">Romeu & Juliet the Alpaca Couple</h2>
-        <p>Bairro Alto, Lisbon</p>
-        <p><strong>£100,000</strong></p>
+      <!-- <img id="alpaca-picture" src="https://images.unsplash.com/photo-1518259102261-b40117eabbc9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"> -->
+      <div>
+        <%= image_tag("sexyfarmer.jpg", class: "avatar-medium alpaca-owner") %>
       </div>
-
-      <div class="alpaca-description">
-        <p> This couple isn't actually here to serve you, in fact they're in need of couple therapy so please help if you can...
-        </p>
-      </div>
-
-      <div class="alpaca-rating">
-        <div class="inline">
-          <div class="rating-block">
-            <div>
-              <p><strong>8.5</strong></p>
-            </div>
-          </div>
+    </div>
+    <div class="alpaca-key-info">
+      <h2><%= @alpaca.name %></h2>
+      <p>Where: <%= @alpaca.address %></p>
+      <p><%= "Color: #{@alpaca.color}" %></p>
+      <p><%= "Age: #{@alpaca.age}" %></p>
+      <p><strong>Price: <%= @alpaca.price %>€ per day</strong></p>
+    </div>
+    <div class="alpaca-description">
+      <p><%= @alpaca.description %></p>
+    </div>
+    <div class="alpaca-rating">
+      <div class="inline">
+        <div class="rating-block">
           <div>
-            <h5>Naked Farmer</h5>
-            <p id=reviews-number>3000 reviews</p>
+            <p><strong>
+              <% unless @alpaca.reviews.average(:rating).nil? %>
+              <%= @alpaca.reviews.average(:rating).round(1).to_s %>
+              <% else %>
+              N/A
+              <% end %>
+            </strong></p>
           </div>
         </div>
-        <div><p>Value for money</p></div>
-        <div><p>Location</p></div>
+        <div>
+          <h4 class="kill-margin-top kill-margin-bottom">Naked Farmer</h4>
+          <p class="kill-margin-top kill-margin-bottom" id=reviews-number>
+            <%= @alpaca.reviews.count.to_s %> reviews
+          </p>
+        </div>
       </div>
-
-      <div class="alpaca-calendar"></div>
+      <div class="inline space-between user-rating">
+        <div><p><%= @alpaca.name %>'s Rating</p></div>
+        <div><p><%= @alpaca.reviews.average(:rating).round(1) %></p></div>
+   <!--      <div><p>THIS BIT IS STILL STATIC</p></div> -->
+      </div>
+      <div class="rating-bar"></div>
+      <div class="inline space-between user-rating">
+        <div><p><%= @alpaca.user.first_name %>'s Rating</p></div>
+          <div><p><%= @alpaca.reviews.average(:rating).round(1) %></p></div>
+        </div>
+        <div class="rating-bar"></div>
+      </div>
 
       <div class="alpaca-reviews">
-
-        <div>
-          <div class="top-half-review-row">
-            <div class="reviewer-photo">
-               <%= image_tag("https://source.unsplash.com/MTZTGvDsHFY/100x100", class: "avatar avatar-small")%>
+        <% @alpaca.reviews.each do |review| %>
+        <div class="review">
+          <div class="inline space-between">
+            <div>
+              <div class="avatar-small"></div>
+              <div class="reviewer">
+                <div>
+                  <p><strong>
+                    <%= review.user.first_name %>
+                    <%= review.user.last_name %>
+                  </strong></p>
+                </div>
+                <div><p>X Days ago</p></div>
+              </div>
             </div>
-            <div class="review-details">
-              <p class="review-details-content-bold">João Naruto</p>
-              <p class="review-details-content"> X days ago</p>
+            <div class="stars">
+              <% review.rating.times do %>
+              <i class="fas fa-star"></i>
+              <% end %>
+              <% (5 - review.rating).times do %>
+              <i class="far fa-star"></i>
+              <% end %>
             </div>
           </div>
-          <div class="bottom-half-review-row">
-              <p class="review-details-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed aspernatur aut quibusdam id officia laudantium saepe, adipisci est maiores temporibus, in fuga, iusto quaerat non molestias quisquam aliquam vel eaque.</p>
-          </div>
+          <p><%= review.description %></p>
         </div>
-
-        <div>
-          <div class="top-half-review-row">
-            <div class="reviewer-photo">
-               <%= image_tag("https://source.unsplash.com/MTZTGvDsHFY/100x100", class: "avatar avatar-small")%>
-            </div>
-            <div class="review-details">
-              <p class="review-details-content-bold">João Naruto</p>
-              <p class="review-details-content"> X days ago</p>
-            </div>
-          </div>
-          <div class="bottom-half-review-row">
-              <p class="review-details-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed aspernatur aut quibusdam id officia laudantium saepe, adipisci est maiores temporibus, in fuga, iusto quaerat non molestias quisquam aliquam vel eaque.</p>
-          </div>
+        <% end %>
+      </div>
+      <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      <div class="alpaca-calendar">
+        <div class="booking-form">
+          <%= render 'booking_form' %>
         </div>
-
-
       </div>
 
     </div>

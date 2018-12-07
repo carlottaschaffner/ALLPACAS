@@ -1,19 +1,89 @@
 <div class="banner">
   <div class="banner-content">
-    <h1>allpacas.com</h1>
-    <p>Your number 1 resource for alpaca rentals</p>
-    <!--  avatars -->
-    <div class="container">
-      <div class="row">
-        <% 4.times do %>
-          <%= link_to image_tag("allpacas", class: "avatar-large"), alpacas_path %>
-        <% end %>
-      </div>
-       <div class="row">
-        <% 3.times do %>
-          <%= link_to image_tag("allpacas", class: "avatar-large"), alpacas_path %>
-        <% end %>
+    <div class="content-center">
+      <h1>allpacas.com</h1>
+      <p>Your number 1 resource for alpaca rentals</p>
+      <!--  avatars -->
+      <div class="container">
+        <div class="row avatarsss">
+          <div class="avatar-box">
+            <%=link_to alpacas_path, :action => 'go' do %>
+            <div class="text">Weddings</div>
+              <%= image_tag("alpaca_icon_06.png", class: "avatar-large") %>
+            <% end %>
+          </div>
+          <div class="avatar-box">
+            <%=link_to alpacas_path, :action => 'go' do %>
+            <div class="text">Photoshoots</div>
+              <%= image_tag("alpaca_icon_01.png", class: "avatar-large") %>
+            <% end %>
+          </div>
+          <div class="avatar-box">
+            <%=link_to alpacas_path, :action => 'go' do %>
+            <div class="text">Go for walks</div>
+              <%= image_tag("alpaca_icon_02.png", class: "avatar-large") %>
+            <% end %>
+          </div>
+          <div class="avatar-box">
+            <%=link_to alpacas_path, :action => 'go' do %>
+            <div class="text">Cuddle-Buddies</div>
+              <%= image_tag("alpaca_icon_03.png", class: "avatar-large") %>
+            <% end %>
+          </div>
+        </div>
+        <div class="row avatarsss">
+          <div class="avatar-box">
+            <%=link_to alpacas_path, :action => 'go' do %>
+            <div class="text">Partyanimals</div>
+              <%= image_tag("alpaca_icon_04.png", class: "avatar-large") %>
+            <% end %>
+          </div>
+          <div class="avatar-box">
+            <%=link_to alpacas_path, :action => 'go' do %>
+            <div class="text">Talents</div>
+              <%= image_tag("alpaca_icon_05.png", class: "avatar-large") %>
+            <% end %>
+          </div>
+          <div class="avatar-box">
+            <%=link_to alpacas_path, :action => 'go' do %>
+            <div class="text">Others</div>
+              <%= image_tag("alpaca_icon_06.png", class: "avatar-large") %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<div class="white">
+  <div class="container">
+    <div class="row">
+      <h2>Some clever about text is about to appear here. About why you definitely need an alpaca rental in your life.</h2>
+    </div>
+     <div class="row row-cards">
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card">
+          <h3>Choose</h3>
+          <i class="fa fa-mouse-pointer"></i>
+          <p>Pick a category and find all alpacas available for your endeavour.</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card">
+          <h3>Book</h3>
+          <i class="fas fa-birthday-cake"></i>
+          <p>Book your alpaca, get it delivered, and have an awesome day!</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card">
+          <h3>Review</h3>
+          <i class="fas fa-star"></i>
+          <p>Share your experience with other alpaca lovers by leaving your review.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

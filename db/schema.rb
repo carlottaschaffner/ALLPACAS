@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_04_114403) do
+ActiveRecord::Schema.define(version: 2018_12_06_173002) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,34 @@ ActiveRecord::Schema.define(version: 2018_12_04_114403) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
+    t.string "photo"
+    t.text "description"
     t.index ["user_id"], name: "index_alpacas_on_user_id"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "final_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "alpaca_id"
+    t.bigint "user_id"
+    t.index ["alpaca_id"], name: "index_bookings_on_alpaca_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "booking_id"
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -34,9 +61,14 @@ ActiveRecord::Schema.define(version: 2018_12_04_114403) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "alpacas", "users"
+  add_foreign_key "bookings", "alpacas"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "reviews", "bookings"
 end

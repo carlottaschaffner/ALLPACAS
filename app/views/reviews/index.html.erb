@@ -1,0 +1,10 @@
+<h2>Past Reviews You’ve Written</h2>
+
+<% current_user.reviews.each do |review| %>
+  <ul>
+    <li>
+     <h5><%= review.title %></h5>
+     <p><%= review.description %></p>
+    </li>
+  </ul>
+<% end %>

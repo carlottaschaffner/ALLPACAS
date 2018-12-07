@@ -1,33 +1,35 @@
-// index_page scss
-
 .about-alpacas {
   margin: 30px;
 }
 
 .alpaca {
-  width: auto;
-  height: 350px;
+  margin: 15px auto;
+  height: 400px;
   background: white;
   border-radius: 4px;
-  box-shadow:  0 1px 7px rgba(0,0,0,.05);
-  display: flex;
-  justify-content: center;
-  margin: auto;
+  box-shadow:  0 1px 7px rgba(0,0,0,.15);
   position: relative;
 }
 
 .alpaca-photo {
-  height: 71%;
-  width: auto;
-  position: absolute;
-  margin-top: 5px;
+  position: relative;
+  border-radius: 4px;
+  width: 100%;
+  height: 250px;
+  margin-top: 0px;
+  background-position: bottom, center;
 }
 
 .alpaca-details {
-  color: $green;
   position: absolute;
-  bottom: 45px;
-  left: 10px;
+  bottom: 0;
+  color: $green;
+  padding: 5px 15px 10px 15px;
+}
+
+.alpaca-name h3 {
+  font-size: 30px;
+  margin: 0px;
 }
 
 .alpaca-action {
@@ -35,4 +37,20 @@
   bottom: 8px;
 }
 
+.alpaca-first-row {
+  position: relative;
+  top: -25px;
+}
 
+.alpaca-owner {
+  position: absolute;
+  box-shadow: 0 1px 7px rgba(0,0,0,.15);
+  top: 10px;
+  right: 10px;
+}
+
+.alpaca-button {
+  position: absolute;
+  bottom: -20px;
+  right: 10px;
+}
