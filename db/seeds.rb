@@ -1,3 +1,20 @@
+titles = [
+  "Great allpaca!",
+  "Amazing experience!",
+  "Best day of my life",
+  "Great day at the park",
+  "Last night an alpaca saved my life",
+  "5 stars"
+]
+ description = [
+  "The owner was communicative and the alpaca was super perky!",
+  "Jonny Alpacker is the best one in the world",
+  "Amazing experience, the alpaca was super fluffy."
+]
+
+colors =
+  ["brown", "camel", "cream", "off-white", "chocolate", "coffee"]
+
 # Creates users
 puts 'Creating users...'
 
@@ -14,14 +31,12 @@ end
 
 puts "Created #{User.count} users..."
 
-
 # Creates alpacas
 puts 'Creating alpacas...'
-names = ["Bill", "Bob", "Fred", "Paco", "Jorge", "Andy", "Sherman"]
-colors = ["brown", "camel", "cream", "off-white", "chocolate", "coffee"]
-30.times do
+# names = ["Bill", "Bob", "Fred", "Paco", "Jorge", "Andy", "Sherman"]
+18.times do
   alpaca = Alpaca.new(
-    name: names.sample,
+    name: Faker::Name.first_name,
     price: rand(50..300),
     color: colors.sample,
     description: Faker::GameOfThrones.quote,
@@ -30,9 +45,9 @@ colors = ["brown", "camel", "cream", "off-white", "chocolate", "coffee"]
     user: User.all.sample
   )
   alpaca.remote_photo_url = "https://source.unsplash.com/collection/1935696/"
-  # sleep(2)
+  sleep(2)
   alpaca.save!
-  puts "#{name}"
+  puts "#{alpaca.name}"
 end
 
 puts "Created #{Alpaca.count} alpacas..."
@@ -54,7 +69,7 @@ User.all.each do |user|
   end
 end
 
- 10.times do |booking|
+ 100.times do |booking|
   booking = Booking.new(
     start_date: 20181201,
     end_date: 20181202,
@@ -63,36 +78,20 @@ end
   )
   booking.save!
   puts "#{booking}"
+
+  review = Review.new(
+    title: titles.sample,
+    description: Faker::Hipster.paragraph,
+    rating: rand(3..5),
+    booking: booking
+    )
+    review.save!
+  puts "#{review.title}"
 end
 
 puts "Created #{Booking.count} reviews..."
 
 # Seed reviews
 puts 'Creating reviews...'
-
-titles = [
-  "Great allpaca!",
-  "Amazing experience!",
-  "Best day of my life",
-  "Great day at the park",
-  "Last night an alpaca saved my life",
-  "5 stars"
-]
- description = [
-  "The owner was communicative and the alpaca was super perky!",
-  "Jonny Alpacker is the best one in the world",
-  "Amazing experience, the alpaca was super fluffy."
-]
-
-100.times do |review|
-review = Review.new(
-  title: titles.sample,
-  description: Faker::Hipster.paragraph,
-  rating: rand(3..5),
-  booking: Booking.all.sample
-  )
-  review.save!
-  puts "#{review.title}"
-end
 
 puts "Created #{Review.count} reviews..."
