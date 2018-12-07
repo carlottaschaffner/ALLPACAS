@@ -22,10 +22,11 @@
   margin: 20px;
 }
 
-.card {
+.home-card {
   text-align: center;
   margin: 40px;
   height: 230px;
+  color: $green;
 }
 
 .row.row-cards {
@@ -42,7 +43,7 @@
   margin: 20px;
 }
 
-.card > .fas.fa-star {
+.home-card > .fas.fa-star {
   color: $green;
   font-size: 70px;
   margin: 20px;
