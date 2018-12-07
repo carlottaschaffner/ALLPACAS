@@ -1,7 +1,10 @@
 import "bootstrap";
+import './application.css';
+
 
 console.log("Im an application")
 
-// import { flatpickr } from '../components/flatpickr';
+import { dateSelector } from '../components/dateselector';
 
-// flatpickr();
+dateSelector();
+
