@@ -42,13 +42,13 @@
       </div>
       <div class="inline space-between user-rating">
         <div><p><%= @alpaca.name %>'s Rating</p></div>
-        <div><p>8.6</p></div>
+        <div><p><%= @alpaca.reviews.average(:rating).round(1) %></p></div>
    <!--      <div><p>THIS BIT IS STILL STATIC</p></div> -->
       </div>
       <div class="rating-bar"></div>
       <div class="inline space-between user-rating">
         <div><p><%= @alpaca.user.first_name %>'s Rating</p></div>
-          <div><p>8.6</p></div>
+          <div><p><%= @alpaca.reviews.average(:rating).round(1) %></p></div>
         </div>
         <div class="rating-bar"></div>
       </div>
