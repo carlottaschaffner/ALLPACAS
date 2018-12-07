@@ -3,9 +3,13 @@
   <div class="col-xs-12 col-sm-6 col-md-4">
     <div class="alpaca">
       <div class="alpaca-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-      url('<%= cl_image_path alpaca.photo, width: 700, crop: :fill %>')"></div>
+      url('<%= cl_image_path alpaca.photo, width: 600, crop: :fill %>')">
+        <%= link_to "Show", alpaca_path(alpaca), class: "alpaca-button btn btn-yellow"  %>
+        <%= image_tag("sexyfarmer.jpg", class: "alpaca-owner avatar-medium") %>
+      </div>
       <div class="alpaca-details">
-        <div class="alpaca-owner-row"><%= image_tag("sexyfarmer.jpg", class: "alpaca-owner avatar-medium") %></div>
+        <div class="alpaca-first-row">
+        </div>
         <div class="alpaca-name"><h3><%= alpaca.name %></h3></div>
         <div class="alpaca-color"> <%= "color: #{alpaca.color}" %></div>
         <div class="alpaca-age"><%= "age: #{alpaca.age}" %></div>
@@ -13,7 +17,6 @@
         <div class="alpacas-price"><strong><%= alpaca.price %>€</strong></div>
         <div class="alpaca-action text-center"></div>
       </div>
-      <%= link_to "Show", alpaca_path(alpaca), class: "btn btn-yellow"  %>
     </div>
   </div>
   <% end %>
