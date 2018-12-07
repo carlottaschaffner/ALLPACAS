@@ -1,6 +1,6 @@
 <h2>Past allpaca bookings</h2>
 
-<% current_user.bookings.each do |booking| %>
+<% current_user.bookings.order(created_at: :desc).each do |booking| %>
   <ul>
     <li>
      <h3>Alpaca name: <%= booking.alpaca.name %></h3>
