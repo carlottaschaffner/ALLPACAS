@@ -20,7 +20,7 @@ puts 'Creating users...'
 
 n_users = 10
 n_alpacas = 3
-n_bookings = n_users * 5
+n_bookings = n_alpacas * 5
 
 # Creates test user
 user = User.new(
@@ -92,16 +92,16 @@ end
 
 # Creates 50 bookings without reviews
 
-puts 'Creating bookings...'
-n_bookings.times do |booking|
-  booking = Booking.new(
-    start_date: 20181201,
-    end_date: 20181202,
-    user: User.all.sample,
-    alpaca: Alpaca.all.sample
-  )
-  booking.save!
-  # puts "#{booking}"
-end
+# puts 'Creating bookings...'
+# 1.times do |booking|
+#   booking = Booking.new(
+#     start_date: 20181201,
+#     end_date: 20181202,
+#     user: User.first,
+#     alpaca: Alpaca.all.sample
+#   )
+#   booking.save!
+#   # puts "#{booking}"
+# end
 
 puts "Created #{Booking.count} bookings..."
