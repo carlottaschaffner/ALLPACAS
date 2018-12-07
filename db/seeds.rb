@@ -18,14 +18,15 @@ puts "Created #{User.count} users..."
 # Creates alpacas
 puts 'Creating alpacas...'
 names = ["Bill", "Bob", "Fred", "Paco", "Jorge", "Andy", "Sherman"]
-names.each do |name|
+colors = ["brown", "camel", "cream", "off-white", "chocolate", "coffee"]
+30.times do
   alpaca = Alpaca.new(
-    name: name,
-    price: rand(10..100),
-    color: ["brown", "camel", "cream", "off-white", "chocolate", "coffee"].sample,
+    name: names.sample,
+    price: rand(50..300),
+    color: colors.sample,
     description: Faker::GameOfThrones.quote,
     address: Faker::Address.city,
-    age: rand(1..54),
+    age: rand(1..20),
     user: User.all.sample
   )
   alpaca.remote_photo_url = "https://source.unsplash.com/collection/1935696/"

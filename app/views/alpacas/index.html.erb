@@ -1,45 +1,21 @@
-<div class="container">
-  <div class="row">
-    <% @alpacas.each do |alpaca| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="alpaca">
-          <div class="alpaca-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-         url('<%= cl_image_path alpaca.photo, height: 200, width: 300, crop: :fill %>')">
-          </div>
-          <div class="alpaca-owner">
-            <%= image_tag("sexyfarmer.jpg", class: "avatar-medium") %>
-          </div>
-          <div class="alpaca-details">
-            <div class="alpaca-name">
-              <h3><%= alpaca.name %></h3>
-            </div>
-            <div class="alpaca-color">
-              <%= "color: #{alpaca.color}" %>
-            </div>
-            <div class="alpaca-age">
-              <%= "age: #{alpaca.age}" %>
-            </div>
-            <div class="alpaca-row">
-              <span class="alpacas-reviews_count">34 reviews</span>
-              <span class="alpacas-price">
-                <strong><%= alpaca.price %>€</strong>
-              </span>
-            </div>
-          </div>
-          <div class="alpaca-action text-center">
-            <%= link_to "Show", alpaca_path(alpaca), class: "btn btn-yellow"  %>
-          </div>
-        </div>
+<div class="row justify-content-between">
+  <% @alpacas.each do |alpaca| %>
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="alpaca">
+      <div class="alpaca-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+      url('<%= cl_image_path alpaca.photo, width: 700, crop: :fill %>')"></div>
+      <div class="alpaca-details">
+        <div class="alpaca-owner-row"><%= image_tag("sexyfarmer.jpg", class: "alpaca-owner avatar-medium") %></div>
+        <div class="alpaca-name"><h3><%= alpaca.name %></h3></div>
+        <div class="alpaca-color"> <%= "color: #{alpaca.color}" %></div>
+        <div class="alpaca-age"><%= "age: #{alpaca.age}" %></div>
+        <div class="alpacas-reviews_count"><%= alpaca.reviews.length %> reviews</div>
+        <div class="alpacas-price"><strong><%= alpaca.price %>€</strong></div>
+        <div class="alpaca-action text-center"></div>
       </div>
-    <% end %>
+      <%= link_to "Show", alpaca_path(alpaca), class: "btn btn-yellow"  %>
+    </div>
   </div>
-</div>
-
-<div class="banner banner-about" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.5) 50%), url('https://images.unsplash.com/photo-1482860679342-ceecba53fef4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');">
-  <div class="about-alpacas">
-    <h1>Find the Alpaca of your dreams...</h1>
-    <p>
-    The Alpaca is a species of South American camelid. It is similar to, and often confused with, the llama. However, alpacas are often noticeably smaller than llamas. Their fur comes in more than 52 natural colors and is hilariously fluffy.</p>
-  </div>
+  <% end %>
 </div>
 
