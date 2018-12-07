@@ -1,22 +1,8 @@
-<h2>Place your Review</h2>
-
-<%= simple_form_for @review do |f| %>
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.collection_radio_buttons :rating, [[5], [4], [3], [2], [1]], :first, :last, item_wrapper_tag: false, boolean_style: :inline do |b| %>
-    <%= b.radio_button + b.label {''} %>
-    <% end %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Submit" %>
-  </div>
-<% end %>
+<%= render "reviews/review_form" %>
 
 <h2>Past Reviews You’ve Written</h2>
 
-<% @user_reviews.each do |review| %>
+<% current_user.reviews.each do |review| %>
   <ul>
     <li>
      <h5><%= review.title %></h5>
