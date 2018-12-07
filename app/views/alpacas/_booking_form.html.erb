@@ -8,7 +8,24 @@
 
   <div class="form-actions">
     <% if user_signed_in? %>
-      <%= f.button :submit, "Book", class: "btn btn-green" %>
+      <!--  f.button :submit, "Book", class: "btn btn-green" %> -->
+      <button id="myBtn", class="btn btn-green">Book</button>
+
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Your ALLPACAS booking is confirmed</p>
+        </div>
+      </div>
+
+      <!-- <button onclick="bookingConfirmation()", class="btn btn-green">Book</button> -->
+
+      <!--  <script>
+        function bookingConfirmation() {
+        confirm("Your ALLPACAS booking is confirmed");
+        }
+      </script> -->
+
     <% else %>
     <div class="login-prompt">
       <em>Please login</em>
@@ -16,3 +33,5 @@
     <% end %>
   </div>
 <% end %>
+
+
