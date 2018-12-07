@@ -1,16 +1,12 @@
 class ReviewsController < ApplicationController
   def index
     reviews = policy_scope(Review).order(created_at: :desc)
+    @review = Review.new
     @user_reviews = current_user.reviews
     authorize reviews
   end
 
-  def new
-    @review = Review.new
-    authorize @review
-  end
-
-  def save
+  def create
     @review = Review.new(review_params)
     authorize @review
 

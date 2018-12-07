@@ -18,6 +18,15 @@ colors =
 # Creates users
 puts 'Creating users...'
 
+# Creates test user
+User.new(
+  email: "all@packer.com",
+  password: "foobar",
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name
+  )
+user.save!
+
 10.times do |user|
   user = User.new(
     email: Faker::Internet.email,
@@ -69,7 +78,7 @@ User.all.each do |user|
   end
 end
 
- 100.times do |booking|
+100.times do |booking|
   booking = Booking.new(
     start_date: 20181201,
     end_date: 20181202,
