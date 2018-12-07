@@ -35,7 +35,7 @@ user.save!
     last_name: Faker::Name.last_name
   )
   user.save!
-  puts "#{user}"
+  # puts "#{user}"
 end
 
 puts "Created #{User.count} users..."
@@ -62,21 +62,8 @@ end
 puts "Created #{Alpaca.count} alpacas..."
 
 
-# Creates bookings
+# Creates 100 bookings with reviews
 puts 'Creating bookings...'
-
-# User.all.each do |user|
-#   rand(1..10).times do |booking|
-#     booking = Booking.new(
-#       start_date: 20181201,
-#       end_date: 20181202,
-#       user: user,
-#       alpaca: Alpaca.all.sample
-#     )
-#     booking.save!
-#     puts "#{booking.id}"
-#   end
-# end
 
 100.times do |booking|
   booking = Booking.new(
@@ -85,6 +72,8 @@ puts 'Creating bookings...'
     user: User.all.sample,
     alpaca: Alpaca.all.sample
   )
+  booking.save!
+  # puts "#{booking}"
 
   review = Review.new(
     title: titles.sample,
@@ -92,15 +81,22 @@ puts 'Creating bookings...'
     rating: rand(3..5),
     booking: booking
     )
-  booking.save!
-  puts "#{booking}"
   review.save!
-  puts "#{review.title}"
+  # puts "#{review.title}"
 end
 
-puts "Created #{Booking.count} reviews..."
+# Creates 50 bookings without reviews
 
-# Seed reviews
-puts 'Creating reviews...'
+puts 'Creating bookings...'
+50.times do |booking|
+  booking = Booking.new(
+    start_date: 20181201,
+    end_date: 20181202,
+    user: User.all.sample,
+    alpaca: Alpaca.all.sample
+  )
+  booking.save!
+  # puts "#{booking}"
+end
 
-puts "Created #{Review.count} reviews..."
+puts "Created #{Booking.count} bookings..."
