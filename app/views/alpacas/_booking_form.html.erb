@@ -9,7 +9,13 @@
 
   <div class="form-actions">
     <% if user_signed_in? %>
-      <%= f.button :submit, "Book", class: "btn btn-green" %>
+      <button onclick="bookingConfirmation()", class="btn btn-green">Book</button>
+
+      <script>
+        function bookingConfirmation() {
+        confirm("Your ALLPACAS booking is confirmed");
+        }
+      </script>
     <% else %>
     <div class="login-prompt">
       <em>Log in or sign up to book <%=@alpaca.name %>!</em>
