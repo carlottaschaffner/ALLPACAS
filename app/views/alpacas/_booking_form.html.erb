@@ -8,7 +8,7 @@
 
   <div class="form-actions">
     <% if user_signed_in? %>
-      <%= f.button :submit, "Book" %>
+      <%= f.button :submit, "Book", class: "btn btn-green" %>
     <% else %>
     <div class="login-prompt">
       <em>Please login</em>
