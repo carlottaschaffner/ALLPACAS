@@ -7,16 +7,23 @@ class ReviewsController < ApplicationController
     authorize reviews
   end
 
+  # def new
+  #   @review = Review.new
+  #   authorize @review
+  # end
+
   def create
     @review = Review.new(review_params)
     authorize @review
 
+    # @booking = Booking.find()
     @review.booking = @booking
+    raise
 
     if @review.save
       redirect_to reviews_path
     else
-      render :new
+      render :index
     end
   end
 
