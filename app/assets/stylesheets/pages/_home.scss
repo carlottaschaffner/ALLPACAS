@@ -1,1 +1,48 @@
 // Specific CSS for your home-page
+.white {
+  background-color: white;
+  height: 500px;
+}
+
+.white h2 {
+  margin: 30px;
+  text-align: center;
+}
+
+.fa {
+  color: $green;
+  font-size: 70px;
+  margin: 20px;
+}
+
+.fal {
+  color: $green;
+  font-size: 70px;
+  margin: 20px;
+}
+
+.card {
+  text-align: center;
+  margin: 40px;
+  height: 230px;
+}
+
+.row.row-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  margin-top: 50px;
+}
+
+.fas.fa-birthday-cake {
+  color: $green;
+  font-size: 70px;
+  margin: 20px;
+}
+
+.fas.fa-star {
+  color: $green;
+  font-size: 70px;
+  margin: 20px;
+}
