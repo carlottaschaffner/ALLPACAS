@@ -10,13 +10,13 @@
   padding-right: 10px;
 }
 
-.fa {
+.home-card > .fa {
   color: $green;
   font-size: 70px;
   margin: 20px;
 }
 
-.fal {
+.home-card > .fal {
   color: $green;
   font-size: 70px;
   margin: 20px;
@@ -37,7 +37,7 @@
   margin-top: 50px;
 }
 
-.fas.fa-birthday-cake {
+.home-card > .fas.fa-birthday-cake {
   color: $green;
   font-size: 70px;
   margin: 20px;
