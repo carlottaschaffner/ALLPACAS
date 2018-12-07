@@ -14,29 +14,24 @@
   position: relative;
   overflow: hidden;
 }
-
 #alpaca-picture {
   width:100%;
   height:100%;
   object-fit: cover;
 }
-
  .alpaca-key-info {
   grid-column: 1 / span 1;
   grid-row: 2 / span 1;
   // background-color: red;
 }
-
  .alpaca-key-info p {
   font-size: 16px;
   margin-bottom: 5px;
  }
-
  .alpaca-key-info h2 {
   margin-top: 0px;
   margin-bottom: 5px;
  }
-
  .alpaca-rating {
   grid-column: 2 / span 1;
   grid-row: 2 / span 1;
@@ -84,55 +79,43 @@
  .inline {
   display: flex;
 }
-
 .space-between {
   justify-content: space-between;
 }
-
 .kill-margin-top {
   margin-top: 0;
 }
-
 .kill-margin-bottom {
   margin-bottom: 0;
 }
-
 .rating-bar {
   width: 100%;
   height: 7px;
   border-radius: 15px;
   background-color: white;
 }
-
 .user-rating {
   font-size: 14px;
 }
-
 .reviewer {
   margin-left: 10px;
 }
-
 .alpaca-reviews p {
   font-size: 14px;
 }
-
 .user-rating p {
   margin-top: 10px;
 }
-
 .review {
   margin-bottom: 50px;
   border-bottom: 1px solid black;
 }
-
 .stars {
   // margin-top: 20px;
 }
-
 .fa-star {
   color: rgb(7.0, 81.0, 72.0);
 }
-
 .fa-star {
   color: rgb(7.0, 81.0, 72.0);
 }

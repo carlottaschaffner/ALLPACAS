@@ -10,7 +10,10 @@
   height: 60px;
   border-radius: 50%;
   margin-bottom: 10px;
-  background-color: gray;
+  background-color: white;
+  border: solid;
+  border-color: $green;
+  border-width: 1px;
 }
 
 .avatarsss {
@@ -57,7 +60,6 @@
   height: 75px;
   border-radius: 50%;
 }
-
 
 .avatar-large.alpaca-owner {
   position: absolute;

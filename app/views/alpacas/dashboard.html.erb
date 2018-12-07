@@ -1,0 +1,87 @@
+<h1>helloooo world</h1>
+<p> hello <%= current_user.email %>, this is your dashboard </p>
+
+
+<h2>SHOW ALL MY ALPACAS!</h2>
+
+1 - get the alpacas array
+2 - iterate over each alpaca
+3 - display name and values
+
+DONE
+
+
+
+
+
+
+  <% @alpacas.each do |feijao| %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+        <div class="card-category"><%= feijao.color %></div>
+        <div class="card-description">
+            <h2> <%= feijao.name %> </h2>
+            <p class="card-p"> <%= feijao.price %> euros</p>
+        </div>
+        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+        <a class="card-link" href="#" ></a>
+      </div>
+  <% end %>
+
+
+
+
+//////////////////////
+
+
+
+
+
+<div class="card-container-2">
+  <div class="card-wrapping-container">
+  <%= image_tag "naruto", class:"avatar-small avatar avatar-card" %>
+  <%= image_tag "https://source.unsplash.com/featured/300x200/?alpacas", class:"card-photo" %>
+  <div class="card-details-2">
+    <p>SHannom</p>
+    <p>price</p>
+  </div>
+  <div class="card-description-2">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+  </div>
+  <div class="card-rating-2">
+    <p>*</p>
+    <p>*</p>
+    <p>*</p>
+  </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

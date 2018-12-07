@@ -53,7 +53,7 @@ n_alpacas.times do
     price: rand(50..300),
     color: colors.sample,
     description: Faker::GameOfThrones.quote,
-    address: Faker::Address.city,
+    address: "Lisbon",
     age: rand(1..20),
     user: User.all.sample
   )
